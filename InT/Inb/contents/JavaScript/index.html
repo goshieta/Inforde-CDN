@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head prefix="og:http://ogp.me/ns#">
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-9KV7NYMY0W"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-9KV7NYMY0W');
+        </script>
+        <meta charset="UTF-8">
+        <meta name="description" content="Inforde BlogのJavaScriptの記事一覧ページです。">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JavaScript 記事一覧 - Inforde Blog</title>
+        <link rel="shortcut icon" href="../../inbIcon.png" type="image/x-icon">
+        <link rel="stylesheet" href="../../css/hf.css">
+        <link rel="stylesheet" href="../../css/flatTheme.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap" rel="stylesheet">
+        <script src="../../js/bar.js"></script>
+        <script src="../../js/ham.js"></script>
+        <style>
+            /*一覧ページ専用のCSS*/
+            #all{
+                margin: 50px 0;
+            }
+            .artOne{
+                border-radius: 5px;
+                margin: 10px 0;
+                padding: 10px;
+                border: solid 1px gray;
+            }
+            #all p,#all a{
+                font-family: 'Sawarabi Gothic', sans-serif;
+            }
+            .artTitle{
+                text-decoration: none;
+                font-size: 17px;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="header">
+            <a href="../../inb.html">
+                <div id="title">
+                    <img src="../../inbIcon.png" alt="アイコン" id="bar_icon">
+                    <p id="title_p">Inforde Blog</p>
+                </div>
+            </a>
+            <div id="space">
+                <p id="luck_title">今日の運勢:</p>
+                <p id="luck_body"></p>
+                <p id="lui_title">今日のラッキーアイテム:</p>
+                <p id="lui_body"></p>
+            </div>
+        </div>
+        <div id="hamMenu" class="hide" style="display: none;">
+            <a href="../../../../InT.html">Inforde Top</a>
+            <a href="../../../Ing/Ing.html">Inforde GAME</a>
+            <a href="../../inb.html">Inforde Blog</a>
+            <a href="../../../統合画面/統合画面_プライバシーポリシー.html">プライバシーポリシー</a>
+            <a href="../../../統合画面/統合画面_報告・提案.html">お問い合わせ</a>
+        </div>
+        <div id="backgray"></div>
+        <div id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div id="contents">
+            <!--ここに書きます。-->
+            <div id="headTitle">
+                <div id="headCenter">
+                    <p style="color: white;">JavaScript 記事一覧</p>
+                </div>
+                <img src="./title.PNG" alt="タイトル画像">
+            </div>
+            <div id="sentence">
+                <p class="sen">JavaScriptに関する記事の一覧ページです。JavaScriptだけではなくTypeScriptの記事も混ざっているかもしれません。</p>
+                <div id="all">
+                    <div class="artOne">
+                        <a href="./art/2/index.html" class="artTitle">JSでCSSを操作してみよう</a>
+                        <p class="artScript">JSからCSSをいじろう！基本的な使い方から、Classを使った発展的なやり方や疑似要素の扱い方も説明しています。</p>
+                    </div>
+                    <div class="artOne">
+                        <a href="./art/3/index.html" class="artTitle">requestAnimationFrameの使い方</a>
+                        <p class="artScript">JSでアニメーションを使うときに使われるrequestAnimationFrameをわかりやすくマスターしよう！実践的な内容も交えて解説。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div id="foot_title">
+                <img src="../../inbIcon.png" alt="Inforde Blog アイコン">
+                <p id="foot_title_p">Inforde Blog</p>
+            </div>
+            <div id="foot_link">
+                <a href="../../../../InT.html">Inforde Top</a>
+                <a href="../../../Ing/Ing.html">Inforde GAME</a>
+                <a href="../../inb.html">Inforde Blog</a>
+                <a href="../../../統合画面/統合画面_プライバシーポリシー.html">プライバシーポリシー</a>
+                <a href="../../../統合画面/統合画面_報告・提案.html">お問い合わせ</a>
+            </div>
+        </div>
+    </body>
+</html>

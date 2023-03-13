@@ -1,0 +1,8 @@
+/*bottom*/
+#bottom{
+    display: flex;
+}
+.bo_div{
+    margin: 20px;
+    width: calc(30% - 40px);
+}

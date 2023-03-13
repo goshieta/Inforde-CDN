@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-9KV7NYMY0W"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-9KV7NYMY0W');
+        </script>
+        <!--version 5-->
+        <meta charset="utf-8">
+        <meta name="description" content="このサイトは様々な検索エンジンやサイト、弊社の独自のサービスを統合したサイトです。バージョンは３です。">
+        <meta name="viewport" content="width=device-width">
+        <title>Inforde Top</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="stylesheet" href="./InT/css/bottom.css">
+        <link rel="stylesheet" href="./InT/css/load.css">
+        <link rel="stylesheet" href="./InT/css/mes.css">
+        <link rel="stylesheet" href="./InT/css/mySite.css">
+        <link rel="stylesheet" href="./InT/css/style.css">
+        <link rel="stylesheet" href="./InT/css/top.css">
+        <link rel="stylesheet" href="./InT/css/wid.css">
+        <link rel="stylesheet" href="./InT/css/phoneBack.css">
+        <link rel="stylesheet" href="./InT/css/weatherMes.css">
+        <link rel="icon" href="./InT/inforde-icon.png">
+        <link rel="apple-touch-icon" href="./InT/inforde-icon.png">
+        <script src="./InT/js/Int.js"></script>
+        <script src="./InT/js/Int_make_back.js"></script>
+        <script src="./InT/js/Int_mySite_wi.js"></script>
+        <script src="./InT/js/weather.js"></script>
+        <script src="./InT/js/mes.js"></script>
+        <script src="./InT/js/wid.js"></script>
+        <script src="./InT/js/speech.js"></script>
+    </head>
+    <body>
+        <div id="back" style="display: none;"></div>
+        <div id="message_div" style="display: none;">
+            <div id="message">
+                <div id="mes_chwepo" class="mes_div" style="display: none;">
+                    <p class='mes_title'>天気の地点を変更</p>
+                    <div id="mwFirst">
+                        <a href='javascript:get_position()'>現在地を取得</a>
+                        <p>または</p>
+                        <a href="javascript:showJapan()">現在地を選択</a><br><br><br>
+                        <div id="loadJson" class="load" style="display: none;"></div>
+                    </div>
+                    <input type='button' value='キャンセル' class='button_two' onclick='mes_behind()'>
+                </div>
+                <div id="mes_edims" class="mes_div" style="display: none;">
+                    <p class='mes_title'>並べ替えまたは削除</p><ul id='drag_list'></ul><input type='button' value='キャンセル' class='button_two' onclick='mes_behind()'><input type='button' value='決定' class='button_one' onclick='edi_ok()'>
+                </div>
+                <div id="mes_addms" class="mes_div" style="display: none;">
+                    <p class='mes_title'>サイトを追加</p>
+                    <input class='mes_input' id="mes_ssurl" placeholder="サイトのURLを入力(例:https://youtube.com)">
+                    <div id="mes_am_pre" style="display: none;">
+                        <div class="mimy_div" id="preview_mes_div">
+                            <div class="mimy_img_div">
+                                <img class="mimy_img" id="mes_pre_img">
+                            </div>
+                            <p class="mimy_p" id="mes_pre_p"></p>
+                        </div>
+                        <div id="mamp_input">
+                            <input class="mes_input preview_right" placeholder="サイト名を入力">
+                            <input class="mes_input preview_right" placeholder="画像のURLを入力">
+                        </div>
+                    </div>
+                    <div id="mes_am_bu">
+                        <input type='button' value='キャンセル' class='button_two' onclick='mes_behind()'>
+                        <input type='button' value='決定' class='button_one' onclick='mes_ag()' id="accept_mab" style="display: none;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="fill" style="display: none;"></div>
+        <div id="load" style="display: block;">
+            <div id="load_area">
+                <div class="load_one"></div>
+                <div class="load_one"></div>
+                <div class="load_one"></div>
+            </div>
+            <p>読み込み中...</p>
+        </div>
+        <div id="whiteSpace" style="display: none;">
+            <div id="mwMap" style="display: none;">
+                <div id="mwmFlex">
+                    <div id="mwmImgArea">
+                        <img src="https://frame-illust.com/fi/wp-content/uploads/2017/06/map-japan-10207.png" alt="日本地図" height="600" id="wepo_img">
+                    </div>
+                    <div id="mwmbuttonArea">
+                        <div id="loadJson2" class="load" style="display: block;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="this" style="display: none;">
+            <div id="top">
+                <div id="mid_form">
+                    <div id="mid_title" class="mf_div">
+                        <p>Inforde</p>
+                    </div>
+                    <div id="miffle_form_set" class="mf_div">
+                        <div id="midf_fo_div">
+                            <button id="midf_engine" onclick="show_sel()"><img id="midf_img"></button>
+                            <input type="text" id="midf_form">
+                            <span class="material-symbols-outlined" id="mic_icon" onclick="onspeak()">
+                                mic
+                            </span>
+                        </div>
+                        <div id="br_mini"></div>
+                        <div id="midf_sug_pa">
+                            <div id="midf_sug" style="display: none;"></div>
+                        </div>
+                        <div id="midf_sel" style="display: none;">
+                            <p>検索エンジンを選択</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="bottom">
+                <div id="left" class="bo_div">
+                    <div id="clock" class="ha_div">
+                        <p id="clock_ymd">令和0年0月0日</p>
+                        <p id="clock_hm">00:00</p>
+                    </div>
+                    <div id="weather" class="ha_div">
+                        <div id="we_title_floor">
+                            <div id="wtf_left">
+                                <p id="wt_title" class="ha_title">天気</p>
+                            </div>
+                            <div id="wtf_right">
+                                <a href="javascript:change_wepo()">地点を変更</a>
+                            </div>
+                        </div>
+                        <div id="we_today" onclick="url('https:\/\/weather.yahoo.co.jp/weather/jp/34/6710/34212.html')" class="hover_change">
+                            <div id="wetd_le">
+                                <p id="wetdl_date">00日(月)</p>
+                                <div id="wetdl_for"></div>
+                            </div>
+                            <div id="wetd_ri">
+                                <div class="weatherFlexDiv">
+                                    <p class="weather_miti">風</p>
+                                    <p id="wetdr_wave" class="we_wave">０．０m</p>
+                                </div>
+                                <div class="weatherFlexDiv" id="todayMaxTempFlexDiv">
+                                    <p class="weather_miti">最高気温</p>
+                                    <p id="wetdr_temp">0度</p>
+                                </div>
+                                <div class="weatherFlexDiv">
+                                    <p class="weather_miti">降水確率</p>
+                                    <p id="wetdr_rain">0%</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="we_tomm" onclick="url('https:\/\/weather.yahoo.co.jp/weather/jp/34/6710/34212.html')" class="hover_change">
+                            <div id="wetm_le">
+                                <p id="wetml_date">00日(月)</p>
+                                <div id="wetml_for"></div>
+                            </div>
+                            <div id="wetm_ri">
+                                <div class="weatherFlexDiv">
+                                    <p class="weather_miti">風</p>
+                                    <p id="wetmr_wave" class="we_wave">０．０m</p>
+                                </div>
+                                <div class="weatherFlexDiv">
+                                    <p class="weather_miti">最高気温</p>
+                                    <p id="wetmr_temp">0度</p>
+                                </div>
+                                <div class="weatherFlexDiv">
+                                    <p class="weather_miti">最低気温</p>
+                                    <p id="wetmr_tempMin">0度</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="site_s" class="one_bottom">
+                    <div id="mid_mysite" class="one_bottom">
+                        <div id="midm_tf">
+                            <div class='ss_title'>
+                                <p>マイサイト</p>
+                            </div>
+                            <div id="midm_edi"><a href='javascript:edita()'>編集</a></div>
+                        </div>
+                        <div id='mid_myedi'></div>
+                    </div>
+                    <div id="Inforde_site" class="one_bottom">
+                        <div class="ss_title">
+                            <p>Infordeサービス</p>
+                        </div>
+                        <div id="Is_div_floor">
+                            <a target="_blank" href="./InT/Ing/Ing.html">
+                                <div id="Isdf_ga" class="Is_div">
+                                    <div class="mimy_img_div">
+                                        <div>
+                                            <img src="./InT/Ing/Ing_files/Ing.png" class="mimy_img">
+                                        </div>
+                                    </div>
+                                    <p class="mimy_p">Inforde GAME</p>
+                                </div>
+                            </a>
+                            <a target="_blank" href="./InT/簡単!誰でも!Javascript入門/入門.html">
+                                <div id="Isdf_js" class="Is_div">
+                                    <div class="mimy_img_div">
+                                        <div>
+                                            <img src="./InT/簡単!誰でも!Javascript入門/入門_files/入門.png" class="mimy_img">
+                                        </div>
+                                    </div>
+                                    <p class="mimy_p">JavaScript入門</p>
+                                </div>
+                            </a>
+                            <div id="Isdf_ranweb" class="Is_div" onclick="random_site()">
+                                <div class="mimy_img_div">
+                                    <div>
+                                        <img src="./InT/ランダムアクセス.png" class="mimy_img">
+                                    </div>
+                                </div>
+                                <p class="mimy_p">ランダムアクセス</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="right" class="bo_div">
+                    <div id="inte_menu" class="ha_div">
+                        <a href="javascript:window.open('./InT/統合画面/統合画面_設定.html','_blank')">設定</a>
+                        <a href="javascript:window.open('./InT/統合画面/統合画面_プライバシーポリシー.html','_blank')">プライバシーポリシー</a>
+                    </div>
+                    <div id="osu_word" class="ha_div">
+                        <em class="ha_title">トレンド</em>
+                        <div class="load_str"></div>
+                        <div class="load_str"></div>
+                        <div class="load_str"></div>
+                        <div class="load_str"></div>
+                        <div class="load_str"></div>
+                    </div>
+                    <div id="news" class="ha_div" onclick="alert('error!')">
+                        <p class="ha_title">ニュース(NHK提供)</p>
+                        <div id="ne_field" class="hover_change">
+                            <div class="load_str"></div>
+                            <div class="load_str"></div>
+                            <div class="load_str"></div>
+                            <div class="load_str"></div>
+                            <div class="load_str"></div>
+                        </div>
+                    </div>
+                    <div id="space"></div>
+                </div>
+            </div>
+        </div>
+        <script>
+            //This program is a program that describes a script that must be executed before the JS file is loaded.
+            let ctxArr=[]
+            fetch('https://script.google.com/macros/s/AKfycbxFpsbkMM9ZaxkD4ex2_y_yROcRKdppCdDweDF4keKiJ2cl_Bs-K3wKXmuw26VEhmIp6Q/exec').then(e=>{
+                return e.text()
+            }).then(txt=>{
+                ctxArr=txt.split(',')
+                dir=document.getElementById("osu_word")
+                dir.innerHTML="<em class='ha_title'>トレンド</em>"
+                for(let i=0;i<5;i++){
+                    let word=ctxArr[i]
+                    code="<a href='javascript:window.open(\"https://www.google.com/search?q="+word+"\",\"_blank\")'>"+word+"</a>"
+                    dir.insertAdjacentHTML("beforeend",code)
+                }
+                let osu_arr=Array.from(document.querySelectorAll("#osu_word a"))
+                if(localStorage.getItem("theme")=="black"){
+                    osu_arr.map((value)=>{
+                        value.style.color="white"
+                    })
+                }
+            })
+        </script>
+    </body>
+</html>

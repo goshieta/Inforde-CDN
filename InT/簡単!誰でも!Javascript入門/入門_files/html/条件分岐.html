@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-9KV7NYMY0W"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-9KV7NYMY0W');
+        </script>
+        <meta charset="utf-8">
+        <meta name="description" content="JavaScript入門者のためのサイトです。プログラミングを一回もやったことがないという人を対象に書いていますが、それ以外の方も歓迎です。">
+        <meta name="viewport" content="width=device-width">
+        <title>条件分岐 簡単！Javascript入門</title>
+        <link rel="stylesheet" href="../../入門_files/入門.css">
+        <link rel="icon" href="../../入門_files/入門.png">
+        <script src="../../入門_files/入門.js"></script>
+        <script src="../prism.js/prism.js"></script>
+        <link rel="stylesheet" href="../prism.js/prism.css">
+    </head>
+    <body>
+        <div id="bar">
+            <div id="title_div">
+                <p id="title">簡単！Javascript入門</p>
+            </div>
+            <div id="title_menu">
+                <div onclick="location.href='../../入門.html'">
+                    <p>トップ</p>
+                </div>
+                <div onclick="location.href='../../../../InT.html'">
+                    <p>Inforde</p>
+                </div>
+                <div onclick="location.href='../../../統合画面/統合画面_Infordeについて.html'">
+                    <p>Infordeとは</p>
+                </div>
+                <div onclick="location.href='../../../統合画面/統合画面_報告・提案.html'">
+                    <p>お問い合わせ</p>
+                </div>
+            </div>
+        </div>
+        <div id="beh_bar"></div>
+        <div id="content">
+            <p class="title_art">条件分岐</p>
+            <p>今回のタイトルは条件分岐です。名前の通り<em class="stt">条件によって結果が変わります</em>。それが条件分岐です。頑張っていきましょう</p>
+            <p class="title_art">比較演算子</p>
+            <p>まずは<em class="string">比較演算子</em>について学びます。「なんだよそれ」という方が大半かもしれませんが比較演算子は左側の値と右側の値を比べて<em class="stt">TrueまたはFalse</em>を返します。</p>
+            <p>とりあえず例をみましょう。主に使われる比較演算子を表にまとめました。</p>
+            <table border="1">
+                <tr>
+                    <td>==</td><td>値が等しい場合Trueを等しくない場合はFalseを返します。代入演算子の=と間違えやすいので気を付けましょう。</td>
+                </tr>
+                <tr>
+                    <td>&lt;</td><td>左の値より右の値のほうが大きい場合Trueを返す。等しかったり小さかった場合はFalse。</td>
+                </tr>
+                <tr>
+                    <td>&gt;</td><td>さっきの逆。</td>
+                </tr>
+                <tr>
+                    <td>&lt;=</td><td>右の値が左の値よりも大きいまたは等しいときにTrueを返す。小さい場合はFalse</td>
+                </tr>
+                <tr>
+                    <td>&gt;=</td><td>さっきの逆</td>
+                </tr>
+            </table>
+            <p>ざっとこんな具合です。では練習問題です。下のコードはそれぞれログになんて出力されるでしょうか？</p>
+            <pre><code class="language-javascript">
+                console.log(12==7)
+                console.log(34&gt;=67)
+                console.log(22*54+32==1220)
+            </code></pre>
+            <p>答えは上から順にfalse,false,trueです。あっていましたか？</p>
+            <p class="title_art">if文</p>
+            <p>いよいよ本題の条件分岐に入っていきます。Javascriptでは条件分岐させる際<em class="string">if文</em>を使います。使い方を見てみましょう。</p>
+            <pre><code class="language-javascript">
+                if(条件式){
+                    //コードをここに記述
+                }
+            </code></pre>
+            <p><em class="string">条件式</em>のところには、先ほど学んだ比較演算子を使った式を入れます。Trueが返ってきた場合、if文の中に書いてあるコードが実行されfalseが帰ってきた場合、if文の中のコードは無視され次に進みます。例を見てみましょう。</p>
+            <pre><code class="language-javascript">
+                let g=12
+                if(g>10){
+                    console.log('gは10よりも大きいです。')
+                }
+                console.log("プログラムを終了します。")
+            </code></pre>
+            <p>これを実行すると</p>
+            <pre><code class="language-javascript">
+                >>gは10よりも大きいです。
+                >>プログラムを終了します。
+            </code></pre>
+            <p>としっかり出力されます。値をいろいろと変えて試してみてください。しかしこの場合gが10より大きいということしか教えてくれません。10以下の時もログに何か出力させたいですよね。そんな時に使うのが<em class="string">else</em>です。これを使うことでfalseが帰ってきたときの処理を記述することができます。さらに<em class="string">else if</em>でelseの中で分岐させることもできます。早速書いてみましょう。</p>
+            <pre><code class="language-javascript">
+                let aha=12
+                if(aha&lt;10){
+                    console.log('ahaは10よりも小さい')
+                }
+                else if(aha==10){
+                    console.log('ahaは10です。')
+                }
+                else{
+                    console.log('ahaは10よりも大きい')
+                }
+            </code></pre>
+            <p>実行すると無事「ahaは10よりも大きい」と出てきました。ほかにもいろいろ値を変えて試してみてください。</p>
+            <p>これで<em class="stt">条件分岐</em>の回は終わりです。よく使うので覚えておいてください。</p>
+        </div>
+        <div id="next_art" onclick="location.href='./繰り返し.html'">
+            <p>次の記事>></p>
+            <p class="ne_title">基本編:繰り返し</p>
+        </div>
+        <div id="na_ne"></div>
+    </body>
+</html>

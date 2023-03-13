@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head prefix="og:http://ogp.me/ns#">
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-9KV7NYMY0W"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-9KV7NYMY0W');
+        </script>
+        <meta charset="UTF-8">
+        <meta name="description" content="JavaScriptのClassについて実践的な内容も踏まえてわかりやすく解説しています。">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Class構文 - Inforde Blog</title>
+        <link rel="shortcut icon" href="../../../../inbIcon.png" type="image/x-icon">
+        <link rel="stylesheet" href="../../../../css/hf.css">
+        <link rel="stylesheet" href="../../../../css/flatTheme.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap" rel="stylesheet">
+        <script src="../../../../js/bar.js"></script>
+        <script src="../../../../js/ham.js"></script>
+        <!--コードのハイライト表示用-->
+        <link rel="stylesheet" href="../../../../prism.js/prism.css">
+        <script src="../../../../prism.js/prism.js"></script>
+    <body>
+        <div id="header">
+            <a href="../../../../inb.html">
+                <div id="title">
+                    <img src="../../../../inbIcon.png" alt="アイコン" id="bar_icon">
+                    <p id="title_p">Inforde Blog</p>
+                </div>
+            </a>
+            <div id="space">
+                <p id="luck_title">今日の運勢:</p>
+                <p id="luck_body"></p>
+                <p id="lui_title">今日のラッキーアイテム:</p>
+                <p id="lui_body"></p>
+            </div>
+        </div>
+        <div id="hamMenu" class="hide" style="display: none;">
+            <a href="../../../../../../InT.html">Inforde Top</a>
+            <a href="../../../../../Ing/Ing.html">Inforde GAME</a>
+            <a href="../../../../inb.html">Inforde Blog</a>
+            <a href="../../../../../統合画面/統合画面_プライバシーポリシー.html">プライバシーポリシー</a>
+            <a href="../../../../../統合画面/統合画面_報告・提案.html">お問い合わせ</a>
+        </div>
+        <div id="backgray"></div>
+        <div id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div id="contents">
+            <!--ここに書きます。-->
+            <div id="headTitle">
+                <div id="headCenter">
+                    <p style="color: white;">Class構文</p>
+                </div>
+                <img src="./title.jpg" alt="タイトル画像">
+            </div>
+            <div id="sentence">
+                <p class="sen">今回はJavaScriptのClassについて解説していきたいと思います。HTMLの要素につけるclassとは違うので、区別してください。</p>
+                <div id="tableOfContents" class="sen">
+                    <p id="tocTitle">目次</p>
+                    <div id="tocDiv">
+                        <a href="#mt1">1. Classとは</a>
+                        <a href="#mt2">2. 書き方</a>
+                        <a href="#mt3">3. コード例</a>
+                        <a href="#mt4">4. 書いてみよう</a>
+                    </div>
+                </div>
+                <h2 class="sen" id="mt1">1. Classとは</h2>
+                <p class="sen">そもそもJavaScriptのClassとは何なのでしょうか。HTMLとかで使うClassとは何が違うのでしょうか。<a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Classes">MDN Web Docs</a>には<strong>「クラスはオブジェクトを作成するためのテンプレートです。」</strong>と書かれています。かみ砕いた説明をするとクラスとは様々なデータや、関数などをひとまとめにする（カプセル化）ことができるものです。これに関してはコード例を見ながら理解してもらえばいいので、今のところは関数とか変数を一つにまとめることができるもの。ぐらいの理解でいてください。</p>
+                <h2 class="sen" id="mt2">2. 書き方</h2>
+                <p class="sen">では書き方を見ていきましょう。基本的な書き方は以下の通りです。</p>
+<pre class="line-numbers"><code class="language-javascript">class testClass{
+    constructor(argument){
+        this.example=argument
+    }
+}
+const hoge=new testClass(0)
+</code></pre>
+                <p class="sen">これを見せられてもさっぱりな人が多いでしょうから、解説します。</p>
+                <p class="sen">まずclassの宣言の仕方ですが、「class クラス名{}」で行います。クラス名は自分の好きな名前でいいです。上の例では「testClass」としていますね。そして{}内にコードの記述をしていきます。最初、言ったと思いますが、classはわかりやすく言うと関数の集合体みたいなものなので、この中には関数を記述していきます。</p>
+                <p class="sen">まず、classを作った時確実に書かなければならない関数があります。それは例にも存在する、<strong>constructor</strong>です。これはオブジェクトを作成し、初期化するという重要な役割を持ちます。どういうこと？と思った人6行目を見てみてください。定数hogeに何かが代入されていますね。「new testClass(0)」と書かれています。classは普通の関数のように直接アクセスする（？）のではなく、このように変数や定数に代入してアクセスします。またtestClassに引数として0を渡していますが、これはconstructorに引数として渡されています。そして受け取った引数を3行目では、this.exampleに代入していますね。これの意味ですが、classは関数や変数の集まりと言いましたが、この集まりにclass内でアクセスする場合は、this.〇〇のようにアクセスします。例えばclass内にある、hogeという関数を実行したければthis.hoge()のように書きます。この場合はthis.exampleという変数を作って、そこにargumentを代入していますね。これによりclass内でthis.exampleにアクセスすると、引数に渡された値が返ってきます。</p>
+                <h2 class="sen" id="mt3">3. コード例</h2>
+                <p class="sen">これまで長ったらしく解説してきましたが、ちょっとは理解できたでしょうか？まあたぶんそこまで理解できていないかなと思います。自分も最初はそうでした。そこでコード例をみてclassが何なのか理解してもらいたいと思います。まず一つ目です。</p>
+<pre class="line-numbers"><code class="language-javascript">class pressNumber{
+    constructor(num){
+        this.num=num
+    }
+    twice(){
+        return this.num*2
+    }
+    threeTimes(){
+        return this.num*3
+    }
+}
+let numArr=[new pressNumber(0),new pressNumber(1),new pressNumber(2)]
+numArr.map(val=>console.log(val.twice()))
+numArr.map(val=>console.log(val.threeTimes()))
+</code></pre>
+<code><pre class="language-javascript">
+>> 0
+>> 2
+>> 4
+>> 0
+>> 3
+>> 6
+</pre></code>
+                <p class="sen">ちょっと複雑ですが、見ていきましょう。</p>
+                <p class="sen">やっていることはとても単純ですね。0,1,2をそれぞれ２倍と３倍にして、コンソールに出力しただけです。問題はそのやり方です。12行目にnumArrが定義されていますね。ここにはそれぞれ、class,pressNumberの引数に0を渡したもの、1を渡したもの、2を渡したものが定義されています。</p>
+                <p class="sen">この渡した引数はどうなるのでしょうか？constructorの中を見ると、this.numに格納されています。そして13行目では、mapを使っています。そしてそれぞれのclassに対して、twice関数を実行していますね。そして返ってきた値をconsole.logでコンソールに出力しています。この実行されているtwiceという関数は何なのでしょうか。classの中を見ると、this.numを二倍して、返すという内容になっていますね。ここに書かれている、this.numとは最初、初期化した際に、引数として渡された値ですので、numArr[0]に対してこのtwice関数を実行するとthi.numは0なので返ってくる値は0となり、numArr[1]の場合は2,numArr[2]の場合は4となります。そして14行目は、twiceがthreeTimesを実行するように変わっただけですね。２倍するというう命令が３倍するに変わっただけです。ここら辺は自分でいろいろといじってみてから理解してみてください。</p>
+                <p class="sen">ちなみに今回はわかりやすさを重視して、この例を使いましたが、ふつうは2倍や3倍するだけなら当たり前ですがこんなことはしません。あくまで理解するための例ですから、そこらへんはよろしくお願いします。さて、次の例は先ほどのものとは違い実用的な例になります。</p>
+<pre class="line-numbers"><code class="language-html">&lt;canvas id=&quot;content&quot; width=&quot;300&quot; height=&quot;300&quot;&gt;
+&lt;script&gt;
+    const ctx=document.getElementById("content").getContext("2d")
+    class oneRound{
+        constructor(){
+            const colorArr=["orange","green","red"]
+            this.time=0
+            this.x=Math.random()*300
+            this.y=Math.random()*300
+            this.color=colorArr[Math.floor(Math.random()*3)]
+        }
+        oneSession(){
+            ctx.beginPath()
+            ctx.fillStyle=this.color
+            ctx.arc(this.x,this.y,Math.cos(this.time)*7+45,0,360*(Math.PI/180),false)
+            ctx.fill()
+            ctx.closePath()
+            this.time+=0.15
+        }
+    }
+
+    let objArray=[]
+    for(let i=0;i&lt;5;i++){
+        objArray.push(new oneRound())
+    }
+
+    function animation(){
+        requestAnimationFrame(animation)
+
+        ctx.clearRect(0,0,300,300)
+        objArray.map(val=>val.oneSession())
+    }
+    animation()
+&lt;/script&gt;
+</code></pre>
+                <div class="preview">
+                    <canvas id="content" width="300" height="300">
+                    <script>
+                        const ctx=document.getElementById("content").getContext("2d")
+                        class oneRound{
+                            constructor(){
+                                const colorArr=["orange","green","red"]
+                                this.time=0
+                                this.x=Math.random()*300
+                                this.y=Math.random()*300
+                                this.color=colorArr[Math.floor(Math.random()*3)]
+                            }
+                            oneSession(){
+                                ctx.beginPath()
+                                ctx.fillStyle=this.color
+                                ctx.arc(this.x,this.y,Math.cos(this.time)*7+45,0,360*(Math.PI/180),false)
+                                ctx.fill()
+                                ctx.closePath()
+                                this.time+=0.15
+                            }
+                        }
+
+                        let objArray=[]
+                        for(let i=0;i<5;i++){
+                            objArray.push(new oneRound())
+                        }
+
+                        function animation(){
+                            requestAnimationFrame(animation)
+
+                            ctx.clearRect(0,0,300,300)
+                            objArray.map(val=>val.oneSession())
+                        }
+                        animation()
+                    </script>
+                </div>
+                <p class="sen">なんか気持ち悪いものができましたね。重要なところを解説していこうと思います。まず、今回は<a href="https://developer.mozilla.org/ja/docs/Web/API/Canvas_API">canvas</a>を利用して作っています。大きさは300×300ですね。そして3行目ではそれを取得してctxに入れています。</p>
+                <p class="sen">そして4行目からはさっそくclassが記述されていますが、今回は飛ばして、先に22行目から見ていきたいと思います。22行目では、配列を宣言し、その後その配列にoneRoundのオブジェクトを５つ代入しています。このオブジェクトが作られた際、内部ではどのような処理が行われているのでしょうか？5行目に戻って、constructorの中身を見てみましょう。これを見ると、まずtimeを宣言しています。このtimeは後で、oneSessionの中身を見ながら解説しますが、丸の大きさを管理するための変数です。そしてそのあとにx座標とy座標がランダムで決められており、色も配列の中からランダムに選択されています。</p>
+                <p class="sen">ではまた飛びますが、27行目からのanimation関数の中身を見てみましょう。まずrequestAnimationFrameを使用してアニメーションを管理していますね。これについては<a href="../3/index.html" target="_blank">こちらの記事</a>で解説しているので、わからない人は見ていってください。そして、30行目で、canvasの内容を一回クリアしています。そしてそのあとに、oneRoundのオブジェクトを格納している配列を参照して、一つずつoneSession関数を実行しています。このoneSession関数は、12行目から記述されていますが、中身を見てみましょう。やっていることはとても単純で、timeの値に応じて、半径を決定し、色とx座標、y座標もconstructorで宣言した値を参照して円を描画しています。そして、最後の行で、timeをインクリメントしています。ちなみにここで半径はtimeの値をもとに算出していますが、よくその仕組みがわからないという方は<a href="../3/index.html" target="_blank" rel="noopener noreferrer">こちら</a>の記事で詳しく解説しています。</p>
+                <h2 class="sen" id="mt4">4. 書いてみよう</h2>
+                <p class="sen">これまでなんかいろいろと書いてきましたが、結局プログラミングって、自分で書いてもらうのが一番手っ取り早いんですよね。ということで自分でコードを書いてもらいます。</p>
+                <p class="sen mt">問題</p>
+                <p class="sen">classを使用して、スタートとストップとリセットという三つの機能が備わったストップウォッチを作りなさい。</p>
+                <div class="acd">
+                    <input type="checkbox" class="acdCheck" id="acdCheck1">
+                    <label for="acdCheck1" class="acdLabel">解答例</label>
+                    <div class="acdHide">
+<pre class="line-numbers"><code class="language-html">&lt;!--時間を表示--&gt;
+&lt;h3 id=&quot;watch&quot;&gt;0&lt;/h3&gt;
+&lt;!--操作用ボタン--&gt;
+&lt;input type=&quot;button&quot; value=&quot;スタート&quot; onclick="nw.start()" id="ssButton"&gt;
+&lt;input type=&quot;button&quot; value=&quot;リセット&quot; onclick="nw.reset()"&gt;
+&lt;!--スクリプト--&gt;
+&lt;script&gt;
+    //時間を表示する要素
+    let watchElem=document.getElementById("watch")
+    class watch{
+        constructor(){
+            //タイマーの時間
+            this.time=0
+            //ストップボタンが押されたときに判別するための変数
+            this.stop=0
+            //複数のstart関数が同時に実行されることを防止（これがないと、スタートボタンを連打すると時間が進む間隔が一定じゃなくなる）
+            this.otherStart=0
+            //addEventListenerのコールバック関数の場合、thisを参照すると、イベントの発火元の要素が参照されるので、それを防ぐ。
+            //つまり、addEventlistenerで呼ばれると、this.timeのように参照しようとしても、thisが発火元の要素（buttonなど）なので、参照できない。
+            //詳しくは https://log.tkyisgk.com/addeventlistener-this
+            this.startEvent=this.start.bind(this)
+            this.stopEvent=this.stopFunc.bind(this)
+            //時間を０にする
+            watchElem.innerHTML=this.time
+            //スタートボタンが押されたとき、start関数が実行されるようにする
+            document.getElementById("ssButton").addEventListener('click',this.startEvent)
+        }
+        start(){
+            //タイマーをスタートする関数です
+            //複数のstart関数が同時に実行されるのを防止
+            if(this.otherStart==1)return
+            this.otherStart=1
+            //ボタンの文字、押されたときに実行されるイベントを変更
+            let button=document.getElementById("ssButton")
+            button.value="ストップ"
+            button.removeEventListener('click',this.startEvent)
+            button.addEventListener('click',this.stopEvent)
+            this.stop=0
+            const timer=setInterval(()=>{
+                //ストップボタンが押されたとき
+                if(this.stop==1){
+                    this.otherStart=0
+                    clearInterval(timer)
+                    return
+                }
+                //timeをインクリメント
+                this.time++
+                //表示される時間を変更
+                watchElem.innerHTML=this.time
+            },1000)
+        }
+        stopFunc(){
+            //タイマーをストップする関数です
+            //ボタンの文字、押されたときに実行されるイベントを変更
+            let button=document.getElementById("ssButton")
+            button.value="スタート"
+            button.removeEventListener('click',this.stopEvent)
+            button.addEventListener('click',this.startEvent)
+            //ストップしたことをstart関数に伝える
+            this.stop=1
+        }
+        reset(){
+            //リセットボタンを押されたときに実行される関数
+            //新しくタイマーを作る
+            nw=new watch()
+            //イベントの削除や、ボタンの変更など、初期化処理
+            let button=document.getElementById('ssButton')
+            button.removeEventListener('click',this.stopEvent)
+            button.removeEventListener('click',this.startEvent)
+            this.stop=1
+            button.value="スタート"
+        }
+    }
+    //タイマーを管理する変数
+    let nw=new watch()
+&lt;/script&gt;
+</code></pre>
+                        <div class="preview">
+                            <!--時間を表示-->
+                            <h3 id="watch">0</h3>
+                            <!--操作用ボタン-->
+                            <input type="button" value="スタート" onclick="nw.start()" id="ssButton">
+                            <input type="button" value="リセット" onclick="nw.reset()">
+                            <!--スクリプト-->
+                            <script>
+                                let watchElem=document.getElementById("watch")
+                                class watch{
+                                    constructor(){
+                                        this.time=0
+                                        this.stop=0
+                                        this.otherStart=0
+                                        this.startEvent=this.start.bind(this)
+                                        this.stopEvent=this.stopFunc.bind(this)
+                                        watchElem.innerHTML=this.time
+                                        document.getElementById("ssButton").addEventListener('click',this.startEvent)
+                                    }
+                                    start(){
+                                        if(this.otherStart==1)return
+                                        this.otherStart=1
+                                        let button=document.getElementById("ssButton")
+                                        button.value="ストップ"
+                                        button.removeEventListener('click',this.startEvent)
+                                        button.addEventListener('click',this.stopEvent)
+                                        this.stop=0
+                                        const timer=setInterval(()=>{
+                                            if(this.stop==1){
+                                                this.otherStart=0
+                                                clearInterval(timer)
+                                                return
+                                            }
+                                            this.time++
+                                            watchElem.innerHTML=this.time
+                                        },1000)
+                                    }
+                                    stopFunc(){
+                                        let button=document.getElementById("ssButton")
+                                        button.value="スタート"
+                                        this.stop=1
+                                        button.removeEventListener('click',this.stopEvent)
+                                        button.addEventListener('click',this.startEvent)
+                                    }
+                                    reset(){
+                                        nw=new watch()
+                                        let button=document.getElementById('ssButton')
+                                        button.removeEventListener('click',this.stopEvent)
+                                        button.removeEventListener('click',this.startEvent)
+                                        this.stop=1
+                                        button.value="スタート"
+                                    }
+                                }
+                                let nw=new watch()
+                            </script>
+                        </div>
+                    </div>
+                </div>
+                <h2 class="sen">まとめ</h2>
+                <p class="sen"></p>
+                <div id="share">
+                </div>
+                <div id="recommends">
+                    <h3>おすすめ記事</h3>
+                    <a href="">
+                        <div class="recomOne">
+                            <img src="../" alt="タイトル画像" width="150">
+                            <div class="recomStr">
+                                <p class="recomTitle"></p>
+                                <p class="recomsen"></p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="">
+                        <div class="recomOne">
+                            <img src="../" alt="タイトル画像" width="150">
+                            <div class="recomStr">
+                                <p class="recomTitle"></p>
+                                <p class="recomsen"></p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="">
+                        <div class="recomOne">
+                            <img src="../" alt="タイトル画像" width="150">
+                            <div class="recomStr">
+                                <p class="recomTitle"></p>
+                                <p class="recomsen"></p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="">
+                        <div class="recomOne">
+                            <img src="../" alt="タイトル画像" width="150">
+                            <div class="recomStr">
+                                <p class="recomTitle"></p>
+                                <p class="recomsen"></p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div id="foot_title">
+                <img src="../../../../inbIcon.png" alt="Inforde Blog アイコン">
+                <p id="foot_title_p">Inforde Blog</p>
+            </div>
+            <div id="foot_link">
+                <a href="../../../../../../InT.html">Inforde Top</a>
+                <a href="../../../../../Ing/Ing.html">Inforde GAME</a>
+                <a href="../../../../inb.html">Inforde Blog</a>
+                <a href="../../../../../統合画面/統合画面_プライバシーポリシー.html">プライバシーポリシー</a>
+                <a href="../../../../../統合画面/統合画面_報告・提案.html">お問い合わせ</a>
+            </div>
+        </div>
+    </body>
+</html>

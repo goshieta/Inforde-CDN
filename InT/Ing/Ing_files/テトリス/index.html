@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ただのテトリス</title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9KV7NYMY0W"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-9KV7NYMY0W');
+    </script>
+    <!--powered by Inforde GAME-->
+    <meta name=”description” content="何の変哲もない、よくある無料テトリスゲームです。暇つぶしに遊んで行ってください。">
+    <link rel="icon" href="../Ing.png">
+    <link rel="stylesheet" href="../bar2.css">
+    <link href="https://unpkg.com/sanitize.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.js"></script>
+    <script src="./script.js"></script>
+    <script>
+        let show=0
+        function show_bar(){
+            if(show==0){
+                document.getElementById('hum_menu').style.display='block'
+                document.getElementById('back_gray').style.display='block'
+                Array.from(document.getElementById('title_menu_hun').children).map((value)=>{
+                    value.style.backgroundColor='black'
+                })
+                show=1
+            }
+            else{
+                setTimeout(()=>{
+                    document.getElementById('hum_menu').style.display='none'
+                    document.getElementById('hum_menu').classList.remove('hide')
+                },450)
+                document.getElementById('hum_menu').classList.add('hide')
+                document.getElementById('back_gray').style.display='none'
+                Array.from(document.getElementById('title_menu_hun').children).map((value)=>{
+                    value.style.backgroundColor='white'
+                })
+                show=0
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="back_gray" style="display: none;"></div>
+    <div id="hum_menu" style="display: none;">
+        <a href="../../../../InT.html">Inforde Top</a>
+        <a href="../../Ing.html">Inforde GAME</a>
+        <a href="../../../Inb/inb.html">Inforde Blog</a>
+        <a href="../../../統合画面/統合画面_プライバシーポリシー.html">プライバシーポリシー</a>
+        <a href="../../../統合画面/統合画面_報告・提案.html">報告・提案</a>
+    </div>
+    <div id="title_menu_hun" onclick="show_bar()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div id="bar">
+        <div id="title_div">
+            <p id="title">Inforde <em class="game">GAME</em></p>
+        </div>
+    </div>
+    <div id="beh_bar"></div>
+    <div id="content"></div>
+    <div id="pan_list">
+        <a href="../../../../InT.html">Inforde Top</a><em>></em><a href="../../Ing.html">Inforde GAME</a><em>></em><em>ただのテトリス</em>
+    </div>
+</body>
+</html>

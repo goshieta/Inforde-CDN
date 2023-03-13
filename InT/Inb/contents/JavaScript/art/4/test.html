@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--時間を表示-->
+    <h3 id="watch">0</h3>
+    <!--操作用ボタン-->
+    <input type="button" value="スタート" id="ssButton">
+    <input type="button" value="リセット" onclick="nw.reset()">
+    <!--スクリプト-->
+    <script>
+        let watchElem=document.getElementById("watch")
+        class watch{
+            constructor(){
+                this.time=0
+                this.stop=0
+                this.otherStart=0
+                this.startEvent=this.start.bind(this)
+                this.stopEvent=this.stopFunc.bind(this)
+                watchElem.innerHTML=this.time
+                document.getElementById("ssButton").addEventListener('click',this.startEvent)
+            }
+            start(){
+                if(this.otherStart==1)return
+                this.otherStart=1
+                let button=document.getElementById("ssButton")
+                button.value="ストップ"
+                button.removeEventListener('click',this.startEvent)
+                button.addEventListener('click',this.stopEvent)
+                this.stop=0
+                const timer=setInterval(()=>{
+                    if(this.stop==1){
+                        this.otherStart=0
+                        clearInterval(timer)
+                        return
+                    }
+                    this.time++
+                    watchElem.innerHTML=this.time
+                },1000)
+            }
+            stopFunc(){
+                let button=document.getElementById("ssButton")
+                button.value="スタート"
+                this.stop=1
+                button.removeEventListener('click',this.stopEvent)
+                button.addEventListener('click',this.startEvent)
+            }
+            reset(){
+                nw=new watch()
+                let button=document.getElementById('ssButton')
+                button.removeEventListener('click',this.stopEvent)
+                button.removeEventListener('click',this.startEvent)
+                this.stop=1
+                button.value="スタート"
+            }
+        }
+        let nw=new watch()
+    </script>
+</body>
+</html>

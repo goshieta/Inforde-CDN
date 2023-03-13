@@ -1,0 +1,158 @@
+/*メッセージボックス*/
+#fill{
+    position: fixed;
+    z-index: 25;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.274);
+}
+#message_div{
+    position: fixed;
+    z-index: 30;
+    width: 100%;
+}
+@keyframes show_mes{
+    0%{
+        top: 100vh;
+    }
+    100%{
+        top: 20px;
+    }
+}
+#message{
+    animation: show_mes 0.5s;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    width: 450px;
+    background-color: white;
+    margin: 0 auto;
+    top: 20px;
+}
+.mes_title{
+    font-size: 30px;
+    border-bottom: solid 4px green;
+    font-weight: bold;
+}
+.mes_onep::before{
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: green;
+    margin-right: 5px;
+}
+.mes_onep{
+    line-height: 0;
+}
+@keyframes form_anime{
+    0%{
+        width: 200px;
+        background-color: white;
+    }
+    100%{
+        width: 300px;
+        background-color: rgb(221, 221, 221);
+    }
+}
+.mes_input{
+    margin: 5px;
+    border-bottom: solid 3px orange;
+    padding: 7px 10px;
+    width: 200px;
+    font-size: 15px;
+    background-color: rgb(245, 245, 245);
+}
+.mes_input:focus{
+    animation: form_anime 0.5s;
+    border-bottom: solid 3px orange;
+    width: 300px;
+    background-color: rgb(221, 221, 221);
+}
+.button_one{
+    font-size: 15px;
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: green;
+    border-radius: 5px;
+    margin: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.button_one:hover{
+    background-color: rgb(0, 165, 0);
+}
+.button_two{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: solid 2px green;
+    border-radius: 5px;
+    margin: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.button_two:hover{
+    background-color: rgb(223, 223, 223);
+}
+.img_ti{
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    box-shadow: 3px 3px 10px 0px gray;
+}
+#inte_menu{
+    line-height: 25px;
+}
+#drag_list li{
+    margin: 10px;
+    list-style: none;
+    display: flex;
+}
+.right_body{
+    border: solid 1px green;
+    border-radius: 3px;
+    padding: 5px;
+    font-size: 15px;
+    display: block;
+}
+.death_li{
+    font-size: 15px;
+    border: solid 1px red;
+    border-radius: 3px;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-right: 10px;
+}
+.death_li:hover{
+    background-color: rgba(255, 0, 0, 0.185);
+}
+#mes_am_pre{
+    margin-top: 10px;
+    display: flex;
+}
+#preview_mes_div{
+    border: solid 1px gray;
+}
+@media screen and (max-width:768px){
+    #message{
+        width: calc(100% - 60px);
+        margin: 10px;
+    }
+}
+#drag_list{
+    overflow: auto;
+    height: 50vh;
+}
+#drag_list::-webkit-scrollbar{
+    width: 10px;
+}
+#drag_list::-webkit-scrollbar-track{
+    background-color: rgb(218, 218, 218);
+}
+#drag_list::-webkit-scrollbar-thumb{
+    background-color: gray;
+    border-radius: 10px;
+}

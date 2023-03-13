@@ -1,0 +1,83 @@
+#whiteSpace{
+    background-color: white;
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    min-height:100vh;
+}
+#mwmFlex{
+    display: flex;
+}
+#mwmImgArea{
+    width: 50%;
+    height: fit-content;
+    position: relative;
+}
+#wepo_img{
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
+
+
+@media screen and (max-width:768px){
+    #mwmFlex{
+        display: block;
+    }
+    #mwmImgArea{
+        width: 100% !important;
+        position: fixed;
+        z-index: -1;
+    }
+    #mwmbuttonArea{
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+    #mwmbuttonArea div{
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+}
+
+/*右側のスコープ*/
+#mwmbuttonArea{
+    width: 50%;
+    padding: 20px;
+}
+#mwmbuttonArea div:not(#loadJson2){
+    width: 100%;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 20px;
+    padding-left: 50px;
+    border: solid 1px gray;
+    box-sizing: border-box;
+    position: relative;
+    cursor: pointer;
+}
+#mwmbuttonArea div:hover{
+    background-color: rgba(204, 204, 204, 0.5);
+}
+#mwmbuttonArea div:hover::before{
+    animation: rightAnimaitonBefore 0.1s forwards;
+}
+@keyframes rightAnimaitonBefore{
+    0%{
+        left: 10px;
+    }
+    100%{
+        left: 20px;
+    }
+}
+#mwmbuttonArea div:not(#loadJson2)::before{
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    border-top: solid 5px rgb(0, 140, 255);
+    border-right: solid 5px rgb(0, 140, 255);
+    transform: rotate(45deg);
+    left: 10px;
+    top: 25px;
+}

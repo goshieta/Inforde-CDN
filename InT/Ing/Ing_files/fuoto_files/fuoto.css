@@ -1,0 +1,132 @@
+#content{
+    width: 100%;
+}
+#content_box{
+    width: 700px;
+    margin: 0 auto;
+}
+input,button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    appearance: none;
+}
+@media screen and (max-width:768px) {
+    #content_box{
+        width: calc(100% - 40px);
+        margin: 20px;
+    }
+}
+
+/*トップ*/
+#top{
+    padding: 20px;
+    border-radius: 5px;
+    background-color: pink;
+    text-align: center;
+}
+#top input{
+    background-color: white;
+    font-size: 25px;
+    color: rgb(255, 118, 118);
+    font-weight: bold;
+    width: 300px;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px 0 10px 0;
+    margin: 10px;
+}
+#top input:hover{
+    background-color: red;
+    color: white;
+}
+#content_title{
+    font-size: 40px;
+    color: rgb(216, 78, 124);
+    font-weight: bold;
+}
+
+
+/*ゲーム画面*/
+#game{
+    height: 400px;
+    background-size:cover;
+}
+#font_floor{
+    animation: box_drop 0.5s;
+    background-color: rgba(255, 255, 255, 0.918);
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    position: relative;
+    top: 10px;
+    margin-top: 0px;
+}
+@keyframes box_drop{
+    0%{
+        transform: scale(0,0);
+    }
+    100%{
+        transform: scale(1,1);
+    }
+}
+#font_name{
+    margin: 0;
+    font-size: 25px;
+    font-weight: bold;
+    color: red;
+}
+#font_game{
+    font-size: 20px;
+}
+#img_floor{
+    width: 100%;
+    text-align: center;
+}
+#img_game{
+    height: 300px;
+}
+.button_game_sen{
+    font-size: 20px;
+    background-color: green;
+    padding: 5px 20px 5px 20px;
+    border-radius: 5px;
+    color: white;
+    margin: 10px;
+}
+.button_game_sen:hover{
+    background-color: rgb(0, 156, 0);
+}
+
+/*ゲームオーバー画面*/
+#game_over{
+    background-color: red;
+    padding: 20px;
+    color: white;
+    text-align:center;
+    border-radius: 5px;
+}
+#game_clear{
+    background-color: rgb(255, 196, 0);
+    padding: 20px;
+    color: white;
+    text-align:center;
+    border-radius: 5px;
+}
+#over_title{
+    font-size:30px;
+}
+.button_prot{
+    color: red;
+    font-weight: bold;
+    border: solid 1px white;
+    padding: 5px 20px 5px 20px;
+    font-size: 25px;
+    background-color: white;
+    border-radius: 5px;
+}
+.button_prot:hover{
+    background-color: pink;
+}

@@ -1,0 +1,55 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "游ゴシック体", "YuGothic", "游ゴシック", "Yu Gothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+}
+p,em,button,input{
+    font-family: "游ゴシック体", "YuGothic", "游ゴシック", "Yu Gothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+}
+
+/*なんか波が広がるエフェクト（ボタン）*/
+.wave_button{
+    overflow: hidden;
+    position: relative;
+}
+.wave_content{
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: wave_anime 0.7s forwards;
+    position: absolute;
+}
+@keyframes wave_anime{
+    0%{
+        transform: scale(0.1);
+        opacity: 1;
+    }
+    100%{
+        transform: scale(10);
+        opacity: 0;
+    }
+}
+
+#contents{
+    padding-top: 85px;
+}
+#contents > div{
+    animation: showContentAnime 0.3s;
+}
+@keyframes showContentAnime{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+/*スクロールバー*/
+html{
+    scrollbar-width: none;
+}
+::-webkit-scrollbar{
+    width: 0px;
+}

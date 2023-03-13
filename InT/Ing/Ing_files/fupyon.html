@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9KV7NYMY0W"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-9KV7NYMY0W');
+    </script>
+    <!--powered by Inforde GAME-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name=”description” content="ボールをはねさせて、障害物を飛び越える無料ゲームです。１～５のキーで操作します。スマホ対応しています。">
+    <title>ぴょんぴょんボールズ</title>
+    <link rel="icon" href="./Ing.png">
+    <link href="https://unpkg.com/sanitize.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="./bar2.css">
+    <link rel="stylesheet" href="./fupyon_files/fupyon.css">
+    <link rel="stylesheet" href="./link.css">
+    <script src="./fupyon_files/fupyon.js"></script>
+    <script>
+        let show=0
+        function show_bar(){
+            if(show==0){
+                document.getElementById('hum_menu').style.display='block'
+                document.getElementById('back_gray').style.display='block'
+                Array.from(document.getElementById('title_menu_hun').children).map((value)=>{
+                    value.style.backgroundColor='black'
+                })
+                show=1
+            }
+            else{
+                setTimeout(()=>{
+                    document.getElementById('hum_menu').style.display='none'
+                    document.getElementById('hum_menu').classList.remove('hide')
+                },450)
+                document.getElementById('hum_menu').classList.add('hide')
+                document.getElementById('back_gray').style.display='none'
+                Array.from(document.getElementById('title_menu_hun').children).map((value)=>{
+                    value.style.backgroundColor='white'
+                })
+                show=0
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="back_gray" style="display: none;"></div>
+    <div id="hum_menu" style="display: none;">
+        <a href="../../../InT.html">Inforde Top</a>
+        <a href="../Ing.html">Inforde GAME</a>
+        <a href="../../統合画面/統合画面_プライバシーポリシー.html">プライバシーポリシー</a>
+        <a href="../../統合画面/統合画面_報告・提案.html">報告・提案</a>
+    </div>
+    <div id="title_menu_hun" onclick="show_bar()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div id="bar">
+        <div id="title_div">
+            <p id="title">Inforde <em class="game">GAME</em></p>
+        </div>
+    </div>
+    <div id="beh_bar"></div>
+    <div id="content">
+        <div id="top">
+            <p id="top_title"><em>ぴょんぴょん</em><em>ボールズ</em></p>
+            <input type="button" value="スタート" onclick="start()"><br>
+            <input type="button" value="ヘルプ" onclick="document.getElementById('help').style.display='block';document.getElementById('top').style.display='none'">
+            <div id="att">
+                <p id="att_p">※注意！このゲームは音が出ます。</p>
+            </div>
+            <div id="sei" style="display: none;">
+                <p id="sei_title">成績</p>
+                <canvas id="sei_can" width="520px" height="300px"></canvas>
+                <table id="score_table">
+                    <tr><th>日付</th><th>スコア</th></tr>
+                </table>
+            </div>
+        </div>
+        <div id="game" style="display: none;">
+            <div id="point_box">
+                <div id="pb_time">
+                    <p>0</p>
+                </div>
+                <div id="pb_power">
+                    <p>100</p>
+                </div>
+                <div id="pb_helth">
+                    <p>5</p>
+                </div>
+            </div>
+            <canvas id="game_box" width="500px" height="300px"></canvas>
+            <div id="gb_while"></div>
+            <div id="button_area">
+                <input type="button" value="1">
+                <input type="button" value="2">
+                <input type="button" value="3">
+                <input type="button" value="4">
+                <input type="button" value="5">
+            </div>
+        </div>
+        <div id="over" style="display: none;">
+            <p id="score_title">スコア</p>
+            <p id="score">0</p>
+            <input type="button" value="トップ" onclick="got()">
+        </div>
+        <div id="help" style="display: none;">
+            <p id="h_title">遊び方</p>
+            <p class="h_mini_title">ゲームの全体</p>
+            <p class="h_setu">このゲームは前からくる茶色い岩を避けて進み、できるだけ長いタイム、プレイできるように競うゲームです。<br>体力と力という二つのパラメータがあり、体力は初期状態は5で0になると死亡です。力は初期状態は100でジャンプするたびにとんだ高さに応じて減り、0になると体力が1減ります。</p>
+            <p class="h_mini_title">操作、画面</p>
+            <div class="flex_box">
+                <img src="./fupyon_files/プレイ画面.PNG" width="300px" height="208px">
+                <p class="h_setu">基本的に操作は1~5の5つのキーで行います。(タッチスクリーンの場合、ゲーム画面の下にある1~5のボタンで操作します。)それぞれのキーでジャンプできる高さが違い、1キーでは1マス分の岩を飛び越えられ、2キーでは2マス分のように割り当てられています。<br>ゲーム画面はプレイ画面とスコア画面に分かれており、スコア画面には3つのパラメータが書かれています。左から順にタイム、力、体力となっています。体力が減ると、画面にダメージエフェクトがかかります。（赤い膜で画面が一時的に覆われます）</p>
+            </div>
+            <p class="h_mini_title">成績の見方</p>
+            <div class="flex_box">
+                <img src="./fupyon_files/成績.png" width="300px" height="178px">
+                <p class="h_setu">成績はトップ画面の下部に表示されています。上にあるのは成績グラフです。縦軸はタイムになっています。グラフの緑の線は最高記録、赤の線は最近のプレイ記録となっており、左に行くほど新しい記録になります。表は最近の記録が書いてあります。</p>
+            </div>
+            <input type="button" onclick="back_top()" id="top_go" value="トップへ">
+        </div>
+    </div>
+    <div id="pan_list">
+        <a href="../../../InT.html">Inforde Top</a><em>></em><a href="../../Ing/Ing.html">Inforde GAME</a><em>></em><em>ぴょんぴょんボールズ</em>
+    </div>
+    <div id="linkArea">
+        <h2 id="linkAreaTitle">おすすめのゲーム</h2>
+        <a href="./fumath.html" class="oneArea">
+            <div class="loImg">
+                <img src="./fumath_files/ただのオセロ_screen.PNG" alt="タイトル画像">
+            </div>
+            <div class="loStr">
+                <p class="loTitle">ただのオセロ</p>
+                <p class="loDescription">ただのオセロです。一人でも二人でも楽しむことができます。</p>
+            </div>
+        </a>
+        <a href="./フラッシュ暗算/" class="oneArea">
+            <div class="loImg">
+                <img src="./フラッシュ暗算/フラッシュ暗算_screen.png" alt="タイトル画像">
+            </div>
+            <div class="loStr">
+                <p class="loTitle">フラッシュ暗算</p>
+                <p class="loDescription">画面に出てくる数字を足し合わせていくのがフラッシュ暗算です。あなたの暗算力を試してみましょう。</p>
+            </div>
+        </a>
+    </div>
+</body>
+</html>

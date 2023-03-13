@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-9KV7NYMY0W"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-9KV7NYMY0W');
+        </script>
+        <meta charset="utf-8">
+        <meta name="description" content="Inforde GAMEはInfordeが提供する無料ブラウザゲームサービスです。">
+        <meta name="viewport" content="width=device-width">
+        <title>Inforde GAME</title>
+        <link rel="icon" href="./Ing_files/Ing.png">
+        <link href="https://unpkg.com/sanitize.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="./Ing_files/Ing.css">
+        <link rel="stylesheet" href="./Ing_files/bar2.css">
+        <script src="./Ing_files/Ing.js"></script>
+        <style>
+            .one_game p{
+                color: black;
+            }
+            a{
+                text-decoration: none;
+            }
+        </style>
+        <script>
+            let show=0
+            function show_bar(){
+                if(show==0){
+                    document.getElementById('hum_menu').style.display='block'
+                    document.getElementById('back_gray').style.display='block'
+                    Array.from(document.getElementById('title_menu_hun').children).map((value)=>{
+                        value.style.backgroundColor='black'
+                    })
+                    show=1
+                }
+                else{
+                    setTimeout(()=>{
+                        document.getElementById('hum_menu').style.display='none'
+                        document.getElementById('hum_menu').classList.remove('hide')
+                    },450)
+                    document.getElementById('hum_menu').classList.add('hide')
+                    document.getElementById('back_gray').style.display='none'
+                    Array.from(document.getElementById('title_menu_hun').children).map((value)=>{
+                        value.style.backgroundColor='white'
+                    })
+                    show=0
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div id="back_gray" style="display: none;"></div>
+        <div id="hum_menu" style="display: none;">
+            <a href="../../InT.html">Inforde Top</a>
+            <a href="../統合画面/統合画面_プライバシーポリシー.html">プライバシーポリシー</a>
+            <a href="../統合画面/統合画面_報告・提案.html">報告・提案</a>
+        </div>
+        <div id="title_menu_hun" onclick="show_bar()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div id="bar">
+            <div id="title_div">
+                <p id="title">Inforde <em class="game">GAME</em></p>
+            </div>
+        </div>
+        <div id="beh_bar"></div>
+        <div id="content">
+            <div id="game_area">
+                <div id="game_area_round" style="display: none;">
+                    <a href="./Ing_files/fumath.html">
+                        <div class="one_game">
+                            <div>
+                                <img src="./Ing_files/fumath_files/ただのオセロ_screen.PNG" class="ga_img" width="300px" height="200px">
+                            </div>
+                            <div>
+                                <p class="game_title">ただのオセロ</p>
+                                <p>ただのオセロです。一人でも二人でも楽しめます。作りが甘いところがあったり、何故か白が先方だったり盤面が10✕10だったりしますが、気にしないでください。</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="./Ing_files/fupyon.html">
+                        <div class="one_game">
+                            <div>
+                                <img src="./Ing_files/fupyon_files/ぴょんぴょんボールズ_screen.PNG" class="ga_img" width="300px" height="200px">
+                            </div>
+                            <div>
+                                <p class="game_title">ぴょんぴょんボールズ</p>
+                                <p>ボールを操作して前からくる障害物を飛び越えるよくあるゲームです。スマホ対応しています。製作者は25秒が限界だったのでそれを超えれるように頑張ってください。</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="./Ing_files/フラッシュ暗算/">
+                        <div class="one_game">
+                            <div>
+                                <img src="./Ing_files/フラッシュ暗算/フラッシュ暗算_screen.png" class="ga_img" width="300px" height="200px">
+                            </div>
+                            <div>
+                                <p class="game_title">フラッシュ暗算</p>
+                                <p>フラッシュ暗算とは画面上に出てくる数字を足し合わせていくというゲームです。あなたの暗算力を試してみましょう。</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="./Ing_files/fuoto.html">
+                        <div class="one_game">
+                            <div>
+                                <img src="./Ing_files/fuoto_files/ドキドキ！わっかない！_screen.PNG" class="ga_img" width="300px" height="200px">
+                            </div>
+                            <div>
+                                <p class="game_title">ドキドキ！わっかない！</p>
+                                <p>北海道の最北端、稚内市を舞台にしたアドベンチャーゲームです。まともなゲームではありませんし手抜きもしていますが、楽しいと信じたいです。多分５分もあればクリアできます。</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="./Ing_files/fure.html">
+                        <div class="one_game">
+                            <div>
+                                <img src="./Ing_files/fure_files/レンレン連打♪_screen.PNG" class="ga_img" width="300px" height="200px">
+                            </div>
+                            <div>
+                                <p class="game_title">レンレン連打♪</p>
+                                <p>ただ、５秒間に何回連打できるかを測るだけのゲームとは多分言えない代物です。どうしてもやることがなくなった時にやってください。１分ぐらいは暇をつぶせます。</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

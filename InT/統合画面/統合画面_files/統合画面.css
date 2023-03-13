@@ -1,0 +1,274 @@
+/*全体*/
+body{
+    margin: 0;
+}
+
+/*バー*/
+#bar{
+    background-color: white;
+    position: fixed;
+    z-index: 1000;
+    width: calc(100% - 20px);
+    display: flex;
+    padding: 10px;
+    border-bottom: solid 2px green;
+}
+#ba_content{
+    margin-left: 30px;
+    display: flex;
+}
+#ba_title img{
+    width: 50px;
+    height: 50px;
+}
+#ba_title em{
+    font-size: 30px;
+    font-weight: bold;
+    color: brown;
+    position: relative;
+    bottom: 10px;
+}
+#ba_content div{
+    padding: 20px;
+}
+#ba_content a{
+    font-weight: bold;
+    color: black;
+}
+#bar_bottom{
+    width: 100%;
+    height: 100px;
+}
+#content{
+    position: relative;
+    z-index: 0;
+}
+@media screen and (max-width:768px){
+    #bar{
+        display: none;
+    }
+    #bar_bottom{
+        display: none;
+    }
+}
+/*全体*/
+input[type="text"],button,input[type="button"]{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    appearance: none;
+}
+input[type="text"],input[type="url"]{
+    width: 300px;
+    border-bottom: solid 2px orange;
+    height: 30px;
+    padding-left: 10px;
+    font-size: 15px;
+}
+@keyframes input_anime{
+    0%{
+        background-color: white;
+        width: 300px;
+    }
+    100%{
+        background-color: rgb(218, 218, 218);
+        width: 500px;
+    }
+}
+input[type="text"]:focus{
+    animation: input_anime 0.5s;
+    background-color: rgb(218, 218, 218);
+    width: 500px;
+}
+input[type="button"]{
+    margin: 10px;
+    padding: 7px 30px 7px 30px;
+    color: white;
+    background-color: rgb(0, 82, 0);
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 15px;
+}
+input[type="button"]:hover{
+    background-color: rgb(0, 104, 0);
+}
+input[type="button"]:active{
+    background-color: rgb(0, 161, 0);
+}
+
+
+/*設定*/
+.con_con{
+    position: relative;
+    animation: app 0.5s;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+@keyframes app{
+    0%{
+        top: 100px;
+    }
+    100%{
+        top: 0px;
+    }
+}
+.con_title{
+    font-size: 20px;
+    border-bottom: solid 2px green ;
+    font-weight: bold;
+}
+.radio{
+    font-size: 18px;
+}
+#con_pre{
+    width: 250px;
+    height: 140px;
+    text-align: center;
+    background-color: rgb(226, 226, 226);
+    margin: 10px;
+}
+#con_pre img{
+    height: 140px;
+}
+#con_pre p{
+    position: relative;
+    top: 52.5px;
+}
+
+/*設定のメッセージ*/
+#mes{
+    animation: mes_show 0.5s;
+    display: none;
+    position: fixed;
+    margin: 0 auto;
+    background-color: rgb(255, 208, 0);
+    z-index: 2000;
+    padding: 0px 5px 0px 5px;
+}
+@keyframes mes_show{
+    0%{
+        left: -100%;
+    }
+    100%{
+        left: 0%;
+    }
+}
+
+
+/*真ん中のやつ*/
+.content_mid{
+    margin: 0 auto;
+    border: solid 1px gray;
+    width: 700px;
+    padding: 20px;
+    background-color: white;
+}
+@media screen and (max-width:768px){
+    .content_mid{
+        width: 100%;
+    }
+}
+
+
+/*スマホメニューCSS*/
+/*　ハンバーガーメニューボタン　*/
+.hamburger {
+    display : block;
+    position: fixed;
+    z-index : 3;
+    right : 20px;
+    top   : 20px;
+    width : 42px;
+    height: 42px;
+    cursor: pointer;
+    text-align: center;
+}
+.hamburger span {
+    display : block;
+    position: absolute;
+    width   : 30px;
+    height  : 2px ;
+    left    : 6px;
+    background : black;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition   : 0.3s ease-in-out;
+    transition        : 0.3s ease-in-out;
+}
+.hamburger span:nth-child(1) {
+    top: 10px;
+}
+.hamburger span:nth-child(2) {
+    top: 20px;
+}
+.hamburger span:nth-child(3) {
+    top: 30px;
+}
+
+/* スマホメニューを開いてる時のボタン */
+.hamburger.active span:nth-child(1) {
+    top : 16px;
+    left: 6px;
+    background :#fff;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform   : rotate(-45deg);
+    transform        : rotate(-45deg);
+}
+
+.hamburger.active span:nth-child(2),
+.hamburger.active span:nth-child(3) {
+    top: 16px;
+    background :#fff;
+    -webkit-transform: rotate(45deg);
+    -moz-transform   : rotate(45deg);
+    transform        : rotate(45deg);
+}
+
+/* メニュー背景　*/
+nav.globalMenuSp {
+    position: fixed;
+    z-index : 2;
+    top  : 0;
+    left : 0;
+    color: #fff;
+    background: rgba( 71,70,73,0.6 );
+    text-align: center;
+    width: 100%;
+    transform: translateX(-100%);
+    transition: all 0.6s;
+}
+
+nav.globalMenuSp ul {
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+}
+
+nav.globalMenuSp ul li {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    transition: .4s all;
+}
+nav.globalMenuSp ul li:last-child {
+    padding-bottom: 0;
+}
+nav.globalMenuSp ul li:hover{
+    background :#ddd;
+}
+
+nav.globalMenuSp ul li a {
+    display: block;
+    color: #fff;
+    padding: 1em 0;
+    text-decoration :none;
+}
+
+/* クリックでjQueryで追加・削除 */
+nav.globalMenuSp.active {
+    opacity: 100;
+    display: block;
+        transform: translateX(0%);
+}

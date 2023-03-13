@@ -1,0 +1,135 @@
+/*トップ*/
+#top{
+    padding: 20px 0;
+}
+#mid_title{
+    width: 20%;
+    position: absolute;
+}
+#mid_title p{
+    position: relative;
+    top: 0px;
+    line-height: 30px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgba(106, 185, 106, 0.801);
+    border-bottom: solid 5px green;
+    border-top: solid 5px green;
+    width: fit-content;
+    margin: 0 auto;
+    color: black;
+    font-size: 30px;
+    position: relative;
+    bottom: 20px;
+    font-weight: bold;
+}
+#miffle_form_set{
+    position: relative;
+    top: 10px;
+    width: 100%;
+}
+#mid_form input{
+    line-height: 0;
+    height: 35px;
+}
+
+#midf_fo_div img{
+    height: 25px;
+    width: 25px;
+    background-color: white;
+}
+#midf_form{
+    width: calc(100% - 54px);
+    font-size: 15px;
+    padding-left: 5px;
+}
+#midf_go{
+    font-weight: bold;
+    width: 40px;
+}
+#midf_fo_div{
+    display: flex;
+    margin: 0 auto;
+    width: 50%;
+    border-radius: 40px;
+    background-color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    align-items: center;
+    border: solid 1px gray;
+}
+.midfs_img{
+    width: 80px;
+    height: 80px;
+    border: solid 2px white;
+}
+.midfs_img:hover{
+    border: solid 2px green;
+}
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+#mic_icon{
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 2px;
+}
+#mic_icon.speaking{
+    background-color: red;
+    color: white;
+}
+#midf_sel{
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    width: fit-content;
+    margin: 0 auto;
+    position: relative;
+    top: 10px;
+}
+#midf_sug_pa{
+    width: calc(50% + 20px);
+    margin: 0 auto;
+}
+#midf_sug{
+    width: 50%;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 10px;
+    border: solid 1px gray;
+    padding: 10px;
+    position: absolute;
+    z-index: 10;
+}
+#midf_sug p{
+    cursor: pointer;
+    margin: 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+#midf_sug p:hover{
+    background-color: rgb(224, 224, 224);
+}
+#br_mini{
+    height: 5px;
+}
+@media screen and (max-width:1000px){
+    #mid_title{
+        position: relative;
+        text-align: center;
+        width: 100%;
+    }
+    #midf_fo_div{
+        width: 90%;
+    }
+    #midf_sug{
+        width: 90%;
+    }
+    #midf_sug_pa{
+        width: calc(90% + 20px);
+    }
+}

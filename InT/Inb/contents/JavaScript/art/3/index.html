@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head prefix="og:http://ogp.me/ns#">
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-9KV7NYMY0W"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-9KV7NYMY0W');
+        </script>
+        <meta charset="UTF-8">
+        <meta name="description" content="JSでアニメーションを使うときに使われるrequestAnimationFrameをわかりやすくマスターしよう！実践的な内容も交えて解説。">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>requestAnimationFrameの使い方 - Inforde Blog</title>
+        <link rel="shortcut icon" href="../../../../inbIcon.png" type="image/x-icon">
+        <link rel="stylesheet" href="../../../../css/hf.css">
+        <link rel="stylesheet" href="../../../../css/flatTheme.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap" rel="stylesheet">
+        <script src="../../../../js/bar.js"></script>
+        <script src="../../../../js/ham.js"></script>
+        <!--コードのハイライト表示用-->
+        <link rel="stylesheet" href="../../../../prism.js/prism.css">
+        <script src="../../../../prism.js/prism.js"></script>
+        <!--OGP設定-->
+        <meta property="og:title" content="requestAnimationFrameの使い方 - Inforde Blog">
+        <meta property="og:description" content="JSでアニメーションを作る時に使われるrequestAnimationFrameの使い方について解説します。">
+        <meta property="og:url" content="https://iyqzbugtwfgzyugaybuxxa.on.drv.tw/Indorde%20top/InT/Inb/contents/IT技術/art/3/index.html">
+        <meta property="og:image" content="https://iyqzbugtwfgzyugaybuxxa.on.drv.tw/Indorde%20top/InT/Inb/contents/IT技術/art/3/title.jpg">
+        <meta property="og:type" content="article">
+        <meta property="og:site_name" content="Inforde Blog">
+        <meta name="twitter:card" content="summary_large_image">
+    </head>
+    <body>
+        <div id="header">
+            <a href="../../../../inb.html">
+                <div id="title">
+                    <img src="../../../../inbIcon.png" alt="アイコン" id="bar_icon">
+                    <p id="title_p">Inforde Blog</p>
+                </div>
+            </a>
+            <div id="space">
+                <p id="luck_title">今日の運勢:</p>
+                <p id="luck_body"></p>
+                <p id="lui_title">今日のラッキーアイテム:</p>
+                <p id="lui_body"></p>
+            </div>
+        </div>
+        <div id="hamMenu" style="display: none;" class="hide">
+            <a href="../../../../../../InT.html">Inforde Top</a>
+            <a href="../../../../../Ing/Ing.html">Inforde GAME</a>
+            <a href="../../../../inb.html">Inforde Blog</a>
+            <a href="../../../../../統合画面/統合画面_プライバシーポリシー.html">プライバシーポリシー</a>
+            <a href="../../../../../統合画面/統合画面_報告・提案.html">お問い合わせ</a>
+        </div>
+        <div id="backgray"></div>
+        <div id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div id="contents">
+            <!--ここに書きます。-->
+            <div id="headTitle">
+                <div id="headCenter">
+                    <p style="color: white;">requestAnimationFrameの使い方</p>
+                </div>
+                <img src="./title.jpg" alt="タイトル画像">
+            </div>
+            <div id="sentence">
+                <p class="sen">今回はJavaScriptでアニメーションを作る際、パフォーマンスを意識したアニメーションを作ることができるrequestAnimationFrameについて解説していきたいと思います。</p>
+                <div id="tableOfContents" class="sen">
+                    <p id="tocTitle">目次</p>
+                    <div id="tocDiv">
+                        <a href="#mt1">1. 基本的な使い方</a>
+                        <a href="#mt2">2. 使い分け</a>
+                    </div>
+                </div>
+                <h2 class="sen" id="mt1">1. 基本的な使い方</h2>
+                <p class="sen">まずはrequestAnimationFrameの基本的な使い方から紹介していこうと思います。requestAnimationFrameは一定時間ごとに引数に指定した関数を呼び出してくれるという物です。「setIntervalと同じじゃん。」と思う人もいるかもしれませんが、「requestAnimationFrame」は間隔の指定ができません。詳しくは第二章で解説しているので、読んでください。</p>
+                <p class="sen">では例を見てみましょう。下の例を実行すると円が拡大縮小を繰り返します。</p>
+<pre class="line-numbers"><code class="language-html">&lt;canvas id=&quot;myCanvas&quot; width=&quot;300&quot; height=&quot;300&quot;&gt;&lt;/canvas&gt;
+&lt;script&gt;
+    const ctx=document.getElementById("myCanvas").getContext("2d")
+    let x=0
+    function hoge(){
+        requestAnimationFrame(hoge)
+        ctx.clearRect(0,0,300,300)
+
+        ctx.beginPath()
+        ctx.arc(150,150,Math.cos(x)*75+75,0,360*(Math.PI/180),false)
+        ctx.fillStyle='red'
+        ctx.fill()
+        ctx.closePath()
+        x+=0.05
+    }
+    hoge()
+&lt;/script&gt;
+</code></pre>
+                <div class="preview">
+                    <canvas id="myCanvas" width="300" height="300"></canvas>
+                    <script>
+                        const ctx=document.getElementById("myCanvas").getContext("2d")
+                        let x=0
+                        function hoge(){
+                            requestAnimationFrame(hoge)
+                            ctx.clearRect(0,0,300,300)
+
+                            ctx.beginPath()
+                            ctx.arc(150,150,Math.cos(x)*75+75,0,360*(Math.PI/180),false)
+                            ctx.fillStyle='red'
+                            ctx.fill()
+                            ctx.closePath()
+                            x+=0.05
+                        }
+                        hoge()
+                    </script>
+                </div>
+                <p class="sen">では詳しく見ていきましょう。まず１行目にはcanvasタグが記述されていますね。ここからもわかるように今回はcanvasを使用して実装していきます。そして２行目からは早速JavaScriptが記述されています。３行目ではcanvasを取得し定数ctxに代入していますね。４行目では変数xが宣言されています。そして５行目からは関数hogeが記述されています。そして今回のポイントは６行目です。requestAnimationFrameが記述されており引数に関数hogeが渡されています。requestAnimationFrameは毎回実行するたびに呼び出さなければならないので、hogeの中に書いてループするようにしています。</p>
+                <p class="sen">そのあと７～１４行目までは全部円を書くプログラムなので、本題からそれることからあまり詳しくは解説しませんが、７行目でcanvasをリセットし、canvasの中心に、赤色で半径が(Math.cos(x)*75+75)pxの円を書いています。ここで数学で習うコサインが使われていますが、一応説明しておくと、コサインのグラフを書くと下のようになることからもわかる通り、コサインはxを増加させていくとyの値は-1から1の間で波のように増えたり減ったりを繰り返します。これを応用し、増減する範囲を0から150にすることで、xの値が変化すると円の半径が0から150の間で増えたり減ったりを繰り返すわけです。</p>
+                <img src="./cosグラフ.png" alt="コサインのグラフ" class="blogImg">
+                <p class="sen">この次、16行目ですがここも今回のポイントの一つです。hogeの中にrequestAnimationFrameを使い、hogeを指定したからと言って、最初の一回が実行されなければ、繰り返して実行はされないので、例のように書く必要があります。</p>
+                <h2 class="sen" id="mt2">2. 使い分け</h2>
+                <p class="sen">１章でも少し触れましたが、これって結局やってることsetIntervalとかsetTimeoutと同じじゃんっていう話ですよね。しかしsetIntervalよりパフォーマンスの面を考慮するとrequestAnimationFrameのほうがいいんです。具体的に説明しますと、まずsetIntervalと違って呼び出される間隔が指定できません。ではどのくらいの回数で呼び出されているかという話ですが、大体１秒間に６０回前後です。しかしこれはディスプレイをはじめとする様々な条件で変動します。これがrequestAnimationFrameの一番の特徴です。例えばタブを切り替えた時、setIntervalだとバックグラウンドでずっと実行し続けて、端末に負荷をかけますが。requestAnimationFrameだとその間は端末に負荷がかからないようにサボってくれます。下に何FPS（１秒間に何回描画されたか）を測ってくれる物を用意したので、タブを切り替えてみたりなんかいろいろしてみて実感してください。</p>
+                <div class="preview">
+                    <p id="showResult" style="font-weight: bold; font-size:20px;">Error!</p>
+                    <p>そこまで正確ではないかもしれません。あくまでも参考程度に。</p>
+                    <script>
+                        let i=0
+                        function oneSession(){
+                            requestAnimationFrame(oneSession)
+                            i++
+                        }
+                        setInterval(()=>{
+                            document.getElementById('showResult').innerHTML=i+"FPS"
+                            i=0
+                        },1000)
+                        oneSession()
+                    </script>
+                </div>
+                <h2 class="sen">まとめ</h2>
+                <p class="sen">今回はrequestAnimationFrameの使い方について解説しました。これを使って何かを作る機会は多々あるのでマスターしておきましょう。（とは言ってもそこまで難しくはありませんが...）</p>
+                <div id="share">
+                    <div class="line-it-button" data-lang="ja" data-type="share-a" data-env="REAL" data-url="https://iyqzbugtwfgzyugaybuxxa.on.drv.tw/Indorde%20top/InT/Inb/contents/IT技術/art/3/index.html" data-color="default" data-size="small" data-count="true" data-ver="3" style="display: none;"></div><script src="https://www.line-website.com/social-plugins/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
+                    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </div>
+                <div id="recommends">
+                    <h3>おすすめ記事</h3>
+                    <a href="../2/index.html">
+                        <div class="recomOne">
+                            <img src="../2/title.jpg" alt="タイトル画像" width="150">
+                            <div class="recomStr">
+                                <p class="recomTitle">JSでCSSを操作してみよう</p>
+                                <p class="recomsen">JSからCSSをいじろう！基本的な使い方から、Classを使った発展的なやり方や疑似要素の扱い方も説明しています。</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="">
+                        <div class="recomOne">
+                            <img src="../" alt="タイトル画像" width="150">
+                            <div class="recomStr">
+                                <p class="recomTitle"></p>
+                                <p class="recomsen"></p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="">
+                        <div class="recomOne">
+                            <img src="../" alt="タイトル画像" width="150">
+                            <div class="recomStr">
+                                <p class="recomTitle"></p>
+                                <p class="recomsen"></p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="">
+                        <div class="recomOne">
+                            <img src="../" alt="タイトル画像" width="150">
+                            <div class="recomStr">
+                                <p class="recomTitle"></p>
+                                <p class="recomsen"></p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div id="foot_title">
+                <img src="../../../../inbIcon.png" alt="Inforde Blog アイコン">
+                <p id="foot_title_p">Inforde Blog</p>
+            </div>
+            <div id="foot_link">
+                <a href="../../../../../../InT.html">Inforde Top</a>
+                <a href="../../../../../Ing/Ing.html">Inforde GAME</a>
+                <a href="../../../../inb.html">Inforde Blog</a>
+                <a href="../../../../../統合画面/統合画面_プライバシーポリシー.html">プライバシーポリシー</a>
+                <a href="../../../../../統合画面/統合画面_報告・提案.html">お問い合わせ</a>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9KV7NYMY0W"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-9KV7NYMY0W');
+    </script>
+    <!--powered by Inforde GAME-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>雪の子供</title>
+    <meta name=”description” content="あなたは雪合戦をしたことはありますか？地域にもよると思いますがこのゲームは長万部に住んでいようが、慶良間諸島に住んでいようが、雪合戦ができるゲームです。">
+    <link rel="icon" href="../Ing.png">
+    <link href="https://unpkg.com/sanitize.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../bar2.css">
+    <link rel="stylesheet" href="./fuyuki_files/fuyuki.css">
+    <script src="./fuyuki_files//three.min.js"></script>
+    <script src="./fuyuki_files/sim.js"></script>
+    <script src="./fuyuki_files/fuyuki.js"></script>
+    <script>
+        let show=0
+        function show_bar(){
+            if(show==0){
+                document.getElementById('hum_menu').style.display='block'
+                document.getElementById('back_gray').style.display='block'
+                Array.from(document.getElementById('title_menu_hun').children).map((value)=>{
+                    value.style.backgroundColor='black'
+                })
+                show=1
+            }
+            else{
+                setTimeout(()=>{
+                    document.getElementById('hum_menu').style.display='none'
+                    document.getElementById('hum_menu').classList.remove('hide')
+                },450)
+                document.getElementById('hum_menu').classList.add('hide')
+                document.getElementById('back_gray').style.display='none'
+                Array.from(document.getElementById('title_menu_hun').children).map((value)=>{
+                    value.style.backgroundColor='white'
+                })
+                show=0
+            }
+        }
+    </script>
+</head>
+<body class="wm_on">
+    <canvas id="snow"></canvas>
+    <div id="back_gray" style="display: none;"></div>
+    <div id="hum_menu" style="display: none;">
+        <a href="../../../../InT.html">Inforde Top</a>
+        <a href="../../Ing.html">Inforde GAME</a>
+        <a href="../../../統合画面/統合画面_プライバシーポリシー.html">プライバシーポリシー</a>
+        <a href="../../../統合画面/統合画面_報告・提案.html">報告・提案</a>
+    </div>
+    <div id="title_menu_hun" onclick="show_bar()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div id="bar">
+        <div id="title_div">
+            <p id="title">Inforde <em class="game">GAME</em></p>
+        </div>
+    </div>
+    <div id="beh_bar"></div>
+    <div id="content">
+        <div id="top" style="display: block;">
+            <p id="top_title">雪の子供</p>
+            <input type="button" value="スタート" onclick="start()"><br>
+            <input type="button" value="遊び方">
+        </div>
+        <div id="game" style="display: none;">
+            <canvas id="game_content"></canvas>
+            <canvas id="game_bar"></canvas>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+/*ウィジェット*/
+.ha_div{
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+.ha_div p{
+    margin: 0;
+}
+/*時計*/
+#clock{
+    text-align: center;
+}
+#clock_hm{
+    font-weight: bold;
+    font-size: 35px;
+}
+/*天気*/
+.we_img{
+    width: 70px;
+    height: 70px;
+    margin: 10px;
+}
+#we_today,#we_tomm{
+    display: flex;
+}
+#wetd_ri,#wetm_ri{
+    padding-left: 20px;
+    padding-top: 15px;
+}
+.weather_miti{
+    color: rgb(255, 38, 38);
+}
+#we_title_floor{
+    display: flex;
+    margin-bottom: 10px;
+}
+#we_title_floor div{
+    width: 50%;
+}
+#wtf_right{
+    text-align: right;
+}
+#wtf_right a{
+    color: rgb(35, 130, 255);
+    text-decoration: none;
+}
+.weatherFlexDiv{
+    display: flex;
+    padding: 5px 0;
+    gap: 0 20px;
+}
+#wetdl_date,#wetml_date{
+    text-align: center;
+}
+
+
+/*おすすめのワード*/
+#osu_word a{
+    color: black;
+    text-decoration: none;
+    display: block;
+    margin: 3px 0;
+}
+#osu_word a:nth-child(2){
+    margin-top: 10px;
+}
+/*ニュース*/
+.ne_title{
+    font-size: 20px;
+    padding: 10px 0;
+    padding-top: 5px;
+}
+#space{
+    height: 60px;
+}

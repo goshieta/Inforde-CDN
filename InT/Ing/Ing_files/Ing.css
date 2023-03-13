@@ -1,0 +1,58 @@
+#content{
+    padding: 30px;
+}
+#game_area{
+    animation: born_anime 0.5s;
+    position: relative;
+}
+#game_area_round{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+.one_game{
+    position: relative;
+    width:300px;
+    padding: 15px;
+    border-radius: 20px;
+    margin: 10px;
+    cursor: pointer;
+    border: solid 1px gray;
+}
+.one_game:hover{
+    position: relative;
+    animation: hover_anime 0.1s forwards;
+}
+@keyframes hover_anime{
+    0%{
+        box-shadow: 0px 0px 0px 0 black;
+        bottom: 0px;
+        border: solid 1px gray;
+    }
+    100%{
+        bottom: 5px;
+        box-shadow: 2px 2px 5px 0 black;
+        border: solid 1px white;
+    }
+}
+.ga_img{
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+}
+.game_title{
+    font-weight: bold;
+    font-size: 20px;
+    border-bottom: solid 3px;
+    border-image: linear-gradient(to right,
+     red, orange) 1 / 1 / 0;
+}
+@media screen and (max-width:500px){
+    .one_game{
+        width: calc(100% - 30px);
+    }
+    #content{
+        padding: 20px;
+        padding-top: 0px;
+    }
+}

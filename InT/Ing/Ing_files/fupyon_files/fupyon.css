@@ -1,0 +1,243 @@
+/*全体*/
+input[type="text"],button,input[type="button"],input[type='color']{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    appearance: none;
+}
+/*トップ*/
+#top{
+    width:500px;
+    margin: 0 auto;
+    text-align: center;
+}
+#top_title{
+    font-size: 35px;
+    font-weight: bold;
+    margin: 20px;
+    border-radius: 5px;
+}
+#top input{
+    font-size: 20px;
+    padding: 10px;
+    width: 250px;
+    border-radius: 5px;
+    background-size: 200%;
+    background-position: 0%;
+    background-image: linear-gradient(to right, #f9d423 0%, #ff4e50 50%,rgb(255, 0, 43) 100%);
+    margin: 5px;
+    color:white;
+    font-weight: bold;
+}
+#top input:hover{
+    animation: goshi 0.2s;
+    background-position: 100%;
+    width: 270px;
+}
+@keyframes goshi{
+    0%{
+        width: 250px;
+        background-position: 0%;
+    }
+    100%{
+        width: 270px;
+        background-position: 100%;
+    }
+}
+#sei_title{
+    font-size: 20px;
+    font-weight: bold;
+}
+#sei_can{
+    background-color: rgb(233, 233, 233);
+    margin-bottom: 20px;
+}
+#att{
+    background-color: rgb(255, 174, 174);
+    border: 2px solid red;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+#att_p{
+    font-size: 20px;
+    font-weight: bold;
+}
+table{
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+th,td{
+    border: solid 1px black;
+    width: 200px;
+    padding: 5px 20px;
+}
+
+/*ゲーム*/
+#game_box{
+    display: block;
+    margin: 0 auto;
+    width: 500px;
+}
+/*ポイントボックス*/
+#point_box{
+    display: flex;
+    width: 500px;
+    margin: 0 auto;
+}
+#point_box div{
+    width: calc(100%/3);
+    text-align: center;
+}
+#point_box p{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+#pb_time{
+    background-color: rgb(46, 196, 255);
+}
+#pb_power{
+    background-color: #ffdf74;
+}
+#pb_helth{
+    background-color: #ff4e50;
+}
+/*タッチボタン*/
+#button_area{
+    width: 500px;
+    display: flex;
+    margin: 0 auto;
+}
+#button_area input{
+    width: 20%;
+    font-size: 20px;
+    padding: 10px 0;
+    border-top: solid 2px orange;
+    border-bottom: solid 2px orange;
+    border-left: solid 2px orange;
+    background-color: #fff1b5;
+}
+#button_area input:last-child{
+    border-right: solid 2px orange;
+}
+#gb_while{
+    height: 5px;
+}
+
+/*ゲームオーバー画面*/
+#over{
+    width: 500px;
+    margin: 0 auto;
+    background: linear-gradient(to right, #f9d423 0%, #ff4e50 100%);
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+#over p{
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+    margin: 10px 0;
+}
+#over input{
+    background-color: white;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px 30px;
+    margin: 20px 0;
+}
+#over input:hover{
+    animation: button_over_anime 0.2s forwards;
+}
+/*ヘルプ*/
+#help{
+    padding: 20px;
+}
+#h_title{
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    margin: 0 auto;
+    width: 200px;
+    font-size: 30px;
+    font-weight: bold;
+}
+#h_title::before{
+    transform: skewX(-40deg);
+    content: "";
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    z-index: -1;
+    background: linear-gradient(to right, #f9d423 0%, #ff4e50 100%);
+}
+.h_mini_title{
+    font-size: 20px;
+    font-weight: bold;
+}
+.h_setu{
+    font-size: 17px;
+    margin: 0;
+}
+.flex_box{
+    display: flex;
+    gap: 0px 20px;
+}
+#top_go{
+    margin: 0 auto;
+    display: block;
+    font-size: 18px;
+    border-radius: 5px;
+    background-color: rgb(0, 68, 0);
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    width: 150px;
+}
+#top_go:hover{
+    background-color: green;
+}
+/*パンくずリスト誤タップ防止*/
+#pan_list{
+    margin-top: 50px;
+}
+
+
+/*スマホ対応*/
+@media screen and (max-width:580px){
+    #sei_can,#att,#score_table,#over,#button_area{
+        width: calc(100% - 20px);
+        margin: 10px;
+    }
+    #top{
+        width: 100%;
+    }
+    #point_box,#game_box{
+        width: calc(100% - 20px);
+        margin: 0px 10px;
+    }
+}
+@media screen and (max-width:410px){
+    #top_title em{
+        display: block;
+    }
+    th,td{
+        width: 50%;
+        padding: 5px 5px;
+    }
+}
+@media screen and (max-width:768px){
+    .flex_box{
+        display: block;
+    }
+    .flex_box img{
+        width: calc(100% - 20px);
+        margin: 10px;
+        height: auto;
+    }
+    .flex_box p{
+        margin: 10px;
+    }
+}

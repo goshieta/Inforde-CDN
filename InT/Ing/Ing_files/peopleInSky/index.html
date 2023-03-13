@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9KV7NYMY0W"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-9KV7NYMY0W');
+    </script>
+    <!--powered by Inforde GAME-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PEOPLE IN SKY</title>
+    <meta name=”description” content="飛行機を操作して世界を飛び回ろう。これであなたもパイロットに！">
+    <link rel="icon" href="../Ing.png">
+    <link rel="stylesheet" href="../bar2.css">
+    <link href="https://unpkg.com/sanitize.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="./fufly_files/css/top.css">
+    <script src="./fufly_files/js/makeTop.js"></script>
+    <script src="./fufly_files/js/game.js"></script>
+    <script>
+        let show=0
+        function show_bar(){
+            if(show==0){
+                document.getElementById('hum_menu').style.display='block'
+                document.getElementById('back_gray').style.display='block'
+                Array.from(document.getElementById('title_menu_hun').children).map((value)=>{
+                    value.style.backgroundColor='black'
+                })
+                show=1
+            }
+            else{
+                setTimeout(()=>{
+                    document.getElementById('hum_menu').style.display='none'
+                    document.getElementById('hum_menu').classList.remove('hide')
+                },450)
+                document.getElementById('hum_menu').classList.add('hide')
+                document.getElementById('back_gray').style.display='none'
+                Array.from(document.getElementById('title_menu_hun').children).map((value)=>{
+                    value.style.backgroundColor='white'
+                })
+                show=0
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="back_gray" style="display: none;"></div>
+    <div id="hum_menu" style="display: none;">
+        <a href="../../../../InT.html">Inforde Top</a>
+        <a href="../../Ing.html">Inforde GAME</a>
+        <a href="../../../統合画面/統合画面_プライバシーポリシー.html">プライバシーポリシー</a>
+        <a href="../../../統合画面/統合画面_報告・提案.html">報告・提案</a>
+    </div>
+    <div id="title_menu_hun" onclick="show_bar()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div id="bar">
+        <div id="title_div">
+            <p id="title">Inforde <em class="game">GAME</em></p>
+        </div>
+    </div>
+    <div id="beh_bar"></div>
+    <div id="content">
+        <div id="top">
+            <div id="game_title">
+                <p id="game_title_p">PEOPLE IN SKY</p>
+            </div>
+            <div id="select"></div>
+        </div>
+        <div id="game" style="display: none;">
+            <canvas id="game_main"></canvas>
+        </div>
+    </div>
+    <div id="pan_list">
+        <a href="../../../../InT.html">Inforde Top</a><em>></em><a href="../../../Ing/Ing.html">Inforde GAME</a><em>></em><em>PEOPLE IN SKY</em>
+    </div>
+</body>
+</html>

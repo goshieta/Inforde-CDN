@@ -1,0 +1,121 @@
+/*サイトショートカット全般*/
+#site_s{
+    background-color: white;
+    height: fit-content;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 20px;
+    width: calc(40% - 40px);
+    border-radius: 10px;
+    background:linear-gradient(to right,rgb(255, 242, 219),rgb(255, 200, 200));
+}
+#site_s p{
+    margin: 0;
+}
+#mid_myedi,#Is_div_floor{
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 10px;
+    justify-content: center;
+}
+.mimy_div,.Is_div{
+    width: 90px;
+    text-align: center;
+    margin: 5px;
+    cursor: pointer;
+    padding-top: 5px;
+    border-radius: 7px;
+}
+.mimy_div:hover,.Is_div:hover{
+    background-color: rgba(128, 128, 128, 0.5);
+}
+.mimy_img{
+    width: 20px;
+    height: 20px;
+}
+.mimy_img_div div{
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+    border-radius: 15px;
+    background-color: white;
+}
+.mimy_img_div{
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    padding: 13px;
+    background-color: white;
+    margin: 0 auto;
+}
+#midm_edi{
+    text-align: right;
+}
+#midm_edi a{
+    color: rgb(26, 0, 0);
+    text-decoration: none;
+    font-weight: bold;
+}
+#midm_tf{
+    display: flex;
+    padding-bottom: 10px;
+}
+.mimy_p{
+    word-wrap: break-word;
+    padding-top: 10px;
+    font-size: 14px;
+}
+#midm_tf div{
+    width: 50%;
+}
+#Is_div_floor{
+    padding-top: 10px;
+}
+.Is_div p{
+    color: black;
+}
+#Is_div_floor a{
+    text-decoration: none;
+}
+#site_s.gray .mimy_img_div{
+    background-color: rgb(197, 195, 206);
+}
+
+@media screen and (max-width:1000px){
+    #bottom{
+        flex-direction: column;
+    }
+    .bo_div{
+        margin: 0 auto;
+        width: 80%;
+    }
+    #left{
+        order: 2;
+    }
+    #site_s{
+        margin: 0 auto;
+        width: 80%;
+        order: 1;
+    }
+    #right{
+        order: 3;
+    }
+}
+@media screen and (max-width:500px){
+    #site_s{
+        margin: 10px;
+        padding: 10px;
+        width: calc(100% - 40px);
+    }
+    .mimy_div,.Is_div{
+        margin: 10px 5px;
+        padding: 0;
+        width: 70px;
+    }
+    .mimy_p{
+        font-size: 13px;
+    }
+    .mimy_div:hover,.Is_div:hover{
+        background-color: rgba(255, 255, 255, 0);
+    }
+}

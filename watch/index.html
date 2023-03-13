@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9KV7NYMY0W"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-9KV7NYMY0W');
+    </script>
+    <!--Settings-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Inforde Watchはこれまでとは違う多機能な時計アプリです。新世代の時計アプリを体感してみませんか？">
+    <title>Inforde Watch</title>
+    <!--favicons-->
+    <link rel="apple-touch-icon" sizes="180x180" href="./image/newFavicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./image/newFavicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./image/newFavicon/favicon-16x16.png">
+    <link rel="manifest" href="./image/newFavicon/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <!--Vue.js CDN---------!!!!!!!!!!!!!!!!!!!開発用。本番用に変更する必要あり!!!!!!!!!!!!!!!!!!!-->
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue3-sfc-loader/dist/vue3-sfc-loader.js"></script>
+    <script src="./js/compStart.js"></script>
+    <!--Inforde CSS-->
+    <link rel="stylesheet" href="./css/load.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/worldWatch.css">
+    <link rel="stylesheet" href="./css/measure.css">
+</head>
+<body>
+    <div id="load" style="display: flex;">
+        <div id="load_con">
+            <p id="load_title">Inforde Watch</p>
+            <p id="load_cam">by Inforde</p>
+            <div id="load_anime"></div>
+        </div>
+        <p id="loadAtt">長い時間が経っても読み込まれない場合は、ネットワークの不具合か、Inforde Watchがお使いのブラウザに対応していない可能性があります。<br><a href="../InT/統合画面/統合画面_報告・提案.html">報告・提案</a>ページにて不具合を報告してください。</p>
+    </div>
+    <div id="main" style="display: none;">
+        <div id="header">
+            <img src="./image/newFavicon/favicon-32x32.png" alt="Inforde Watchのアイコン" id="header_icon" width="32" height="32">
+            <h1 id="header_title">Inforde Watch</h1>
+            <div id="header_menu">
+                <div class="hm_item hmOn wave_button" onclick="changeScreen(0)">
+                    <p>世界時計</p>
+                </div>
+                <div class="hm_item wave_button" onclick="changeScreen(1)">
+                    <p>時間計測</p>
+                </div>
+                <div class="hm_item wave_button" onclick="changeScreen(2)">
+                    <p>画面表示</p>
+                </div>
+            </div>
+        </div>
+        <div id="contents">
+            <div id="worldWatch">
+                <div id="bigWatchArea">
+                    <one-watch city_name="東京" difference_utc="+9"></one-watch>
+                </div>
+                <div id="smallWatchArea">
+                    <one-watch  v-for="city in cityList" :key="city[0]" :city_name="city[0]" :difference_utc="city[1]" size="true"></one-watch>
+                </div>
+            </div>
+            <div id="measure">
+                <div id="modal_area" v-show="modalNum!=-1">
+                    <modal-st v-if="modalNum==0" :watch-initial="stModalInfo" @shut-comp="modalNum=-1" @new-st="addStopWatch"></modal-st>
+                    <div class="modal_win" v-show="modalNum==1">
+                        <h2>タイマー(計時器)の追加</h2>
+                        <div class="modal_button_area">
+                            <button @click="modalNum=-1" class="flat_button2">キャンセル</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="out_button_box">
+                    <div id="button_box">
+                        <button @click="modalNum=0;stModalInfo.title='ストップウォッチ'+(Object.keys(this.item).length+1);stModalInfo.mode='add'"><span class="button_plus">+</span>秒時計</button>
+                        <button @click="modalNum=1"><span class="button_plus">+</span>計時器</button>
+                    </div>
+                </div>
+                <div id="measureContent">
+                    <div id="measureNone" v-show="Object.keys(this.item).length==0">
+                        <p>現在ストップウォッチ(秒時計)やタイマー(計時器)は設定されていません。上のボタンから追加しましょう 🎉！</p>
+                    </div>
+                    <div id="mscArea">
+                        <div class="onest" v-for="(oneItem,index) in item" :key="oneItem[1]">
+                            <stop-watch :obj_name="oneItem[1]" v-if="oneItem[0]=='st'" @delate="item.splice(index,1)" @edita="editaComp"></stop-watch>
+                            <timer v-if="oneItem[0]=='ti'"></timer>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="screen">
+                <h2>画面表示</h2>
+            </div>
+        </div>
+    </div>
+    <!--Inforde JS-->
+    <script src="./js/main.js"></script>
+    <script src="./js/worldWatch.js"></script>
+    <script src="./js/measure.js"></script>
+    <script src="./js/screen.js"></script>
+</body>
+</html>

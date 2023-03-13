@@ -1,0 +1,348 @@
+/*全体*/
+body{
+    background-color: antiquewhite;
+}
+/*りせっとcss*/
+input,
+button,
+select,
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  font: inherit;
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+  display: none;
+}
+
+input[type='submit'],
+input[type='button'],
+label,
+button,
+select {
+  cursor: pointer;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+/*トップ画面*/
+#game_title_div,#setu,#level{
+    text-align: center;
+    margin: 10px;
+}
+#game_title{
+    font-size: 30px;
+    font-weight: bold;
+    color: green;
+}
+#level p{
+    margin: 0;
+}
+#ls_title{
+    font-size: 20px;
+    font-weight: bold;
+}
+#lev_app{
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+/*レベル選択フォーム*/
+#lev_form{
+    background-color: white;
+    text-align: left;
+    margin: 0 auto;
+    padding: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+    width: fit-content;
+    border-radius: 5px;
+}
+#lev_form div{
+    padding: 10px;
+}
+#lev_form::-webkit-scrollbar{
+    width: 6px;
+}
+#lev_form::-webkit-scrollbar-thumb{
+    background-color: aliceblue;
+}
+#lev_form::-webkit-scrollbar-thumb{
+    border-radius: 3px;
+    background-color: gray;
+}
+#lev_form input[type='radio']{
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    margin: -1px;
+}
+#lev_form label{
+    color: black;
+    padding-left: 30px;
+    display: block;
+    position: relative;
+    margin: 5px 0;
+    cursor: pointer;
+}
+#lev_form label:hover::before{
+    border: solid 1px orange;
+}
+#lev_form label::before,#lev_form label::after{
+    content: '';
+    display: block;
+    border-radius: 50%;
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+}
+#lev_form label::before{
+    background-color: white;
+    border: solid 1px gray;
+    width: 20px;
+    height: 20px;
+    left: 7px;
+}
+#lev_form label::after{
+    background-color: orange;
+    opacity: 0;
+    width: 12px;
+    height: 12px;
+    left: 11px;
+}
+#lev_form input:checked + label::after{
+    opacity: 1;
+}
+#lev_form input:checked + label::before{
+    border: solid 1px orange;
+}
+@media screen and (max-width:768px){
+    #lev_form{
+        height: 250px;
+        overflow: scroll;
+        display: block;
+    }
+    #lev_form div{
+        padding: 0px 10px;
+    }
+}
+
+/*スタートボタン*/
+#enter{
+    padding-bottom: 20px;
+}
+#strat_button{
+    display: block;
+    margin: 0 auto;
+    background-color: orangered;
+    color: white;
+    padding: 5px 30px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/*ゲーム画面*/
+#game{
+    text-align: center;
+}
+#main_str{
+    font-weight: bold;
+    font-size: 100px;
+    color: white;
+}
+#answer{
+    padding: 10px;
+    width: 500px;
+    border-radius: 3px;
+    border: solid 1px gray;
+    background-color: white;
+    display: block;
+    margin: 100px auto;
+}
+#answer_button,#nb,#go_top{
+    background-color: orangered;
+    width: 150px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px 0;
+    color: white;
+    position: relative;
+}
+#answer_button{
+    bottom: 50px;
+}
+#answer_button:hover,#nb:hover,#go_top:hover{
+    animation: button_anime 0.3s forwards;
+}
+@keyframes button_anime{
+    0%{
+        width: 150px;
+        background-color: orangered;
+    }
+    100%{
+        width: 200px;
+        background-color: rgb(255, 94, 0);
+    }
+}
+@media screen and (max-width:768px){
+    #answer{
+        width: 90%;
+    }
+}
+
+/*答え表示*/
+.poroblem_div p{
+    margin: 0;
+    font-size: 18px;
+}
+.poroblem_div{
+    text-align: center;
+    padding-bottom: 10px;
+}
+#answer_show{
+    padding: 20px 100px;
+}
+.answer_one{
+    background-color: white;
+    padding-top: 10px;
+    border: solid 1px gray;
+}
+.answer_one p{
+    color: black;
+    padding: 0px 50px;
+}
+.answer_mt{
+    padding: 10px 0px;
+    border-top: solid 2px gray;
+    text-align: center;
+}
+.answer_mt p{
+    margin: 0;
+}
+.answer_my{
+    font-weight: bold;
+    font-size: 25px;
+}
+.answer_true{
+    font-size: 22px;
+}
+#answer_center{
+    display: flex;
+    width: fit-content;
+    margin: 0 auto;
+}
+#answer_next{
+    text-align: center;
+    padding-top: 30px;
+}
+@media screen and (max-width:768px){
+    #answer_show{
+        padding: 0;
+        padding-bottom: 10px;
+    }
+    #answer_center{
+        display: block;
+    }
+    .answer_mt{
+        width: 100%;
+        border: none;
+    }
+    .answer_one{
+        width: 80%;
+        margin: 0 auto;
+        padding: 0;
+        position: relative;
+    }
+    #answer_center{
+        width: 100%;
+    }
+    .poroblem_div{
+        display: none;
+    }
+    .answer_one::before{
+        content: "";
+        display: block;
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+        padding-top: 5px;
+        background-color: white;
+        position: absolute;
+        text-align: center;
+        border-radius: 50%;
+        left: 10px;
+        top: 20px;
+        font-weight: bold;
+    }
+    #answer_one0::before{
+        content: "1";
+    }
+    #answer_one1::before{
+        content: "2";
+    }
+    #answer_one2::before{
+        content: "3";
+    }
+    #answer_one3::before{
+        content: "4";
+    }
+    #answer_one4::before{
+        content: "5";
+    }
+}
+
+/*ランク結果*/
+#yl_lev{
+    font-size: 30px;
+    color: black;
+    margin: 0;
+}
+#yl_p{
+    font-size: 50px;
+    font-weight: bold;
+    color: black;
+    margin: 10px;
+    text-shadow: 3px 2px rgb(255, 81, 0);
+}
+#yl_block{
+    margin: 20px auto;
+    width: 380px;
+    text-align: center;
+    padding: 20px 80px;
+    border: double 10px green;
+    border-radius: 15px;
+    font-weight: bold;
+}
+#your_lank{
+    width: 100%;
+}
+@media screen and (max-width:768px){
+    #your_lank{
+        box-sizing:border-box;
+        width: 100%;
+    }
+    #yl_block{
+        padding: 10px 0;
+        width: 90%;
+    }
+}

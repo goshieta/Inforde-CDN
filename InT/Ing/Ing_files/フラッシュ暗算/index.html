@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9KV7NYMY0W"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-9KV7NYMY0W');
+    </script>
+    <!--powered by Inforde GAME-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name=”description” content="ただのフラッシュ暗算（画面に出てくる数字を足し合わせる）です。初心者から上級者まで楽しめるレベル分けしています。">
+    <title>ただのフラッシュ暗算</title>
+    <link rel="icon" href="../Ing.png">
+    <link href="https://unpkg.com/sanitize.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../bar2.css">
+    <link rel="stylesheet" href="./fufu_files/fufu.css">
+    <link rel="stylesheet" href="../link.css">
+    <script src="./fufu_files/fufu.js"></script>
+    <script>
+        let show=0
+        function show_bar(){
+            if(show==0){
+                document.getElementById('hum_menu').style.display='block'
+                document.getElementById('back_gray').style.display='block'
+                Array.from(document.getElementById('title_menu_hun').children).map((value)=>{
+                    value.style.backgroundColor='black'
+                })
+                show=1
+            }
+            else{
+                setTimeout(()=>{
+                    document.getElementById('hum_menu').style.display='none'
+                    document.getElementById('hum_menu').classList.remove('hide')
+                },450)
+                document.getElementById('hum_menu').classList.add('hide')
+                document.getElementById('back_gray').style.display='none'
+                Array.from(document.getElementById('title_menu_hun').children).map((value)=>{
+                    value.style.backgroundColor='white'
+                })
+                show=0
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="back_gray" style="display: none;"></div>
+    <div id="hum_menu" style="display: none;">
+        <a href="../../../../InT.html">Inforde Top</a>
+        <a href="../../Ing.html">Inforde GAME</a>
+        <a href="../../../統合画面/統合画面_プライバシーポリシー.html">プライバシーポリシー</a>
+        <a href="../../../統合画面/統合画面_報告・提案.html">報告・提案</a>
+    </div>
+    <div id="title_menu_hun" onclick="show_bar()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div id="bar">
+        <div id="title_div">
+            <p id="title">Inforde <em class="game">GAME</em></p>
+        </div>
+    </div>
+    <div id="beh_bar"></div>
+    <div id="content">
+        <div id="top">
+            <div id="game_title_div">
+                <p id="game_title">フラッシュ暗算</p>
+            </div>
+            <div id="setu">
+                <p>フラッシュ暗算とは画面上に出てくる数字を足し合わせていくというゲームです。あなたの暗算力を試してみましょう。</p>
+            </div>
+            <div id="level">
+                <p id="ls_title">選択したレベル</p>
+                <p id="lev_app">レベル0</p>
+                <form id="lev_form">
+                    <div>
+                        <input type="radio" name="lev_flash" value="1" id="lev_flash_1" checked><label for="lev_flash_1">レベル1 1桁5口10秒</label>
+                        <input type="radio" name="lev_flash" value="2" id="lev_flash_2"><label for="lev_flash_2">レベル2 1桁5口5秒</label>
+                        <input type="radio" name="lev_flash" value="3" id="lev_flash_3"><label for="lev_flash_3">レベル3 1桁5口4秒</label>
+                        <input type="radio" name="lev_flash" value="4" id="lev_flash_4"><label for="lev_flash_4">レベル4 1桁5口3秒</label>
+                        <input type="radio" name="lev_flash" value="5" id="lev_flash_5"><label for="lev_flash_5">レベル5 1桁10口5秒</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="lev_flash" value="6" id="lev_flash_6"><label for="lev_flash_6">レベル6 2桁5口10秒</label>
+                        <input type="radio" name="lev_flash" value="7" id="lev_flash_7"><label for="lev_flash_7">レベル7 2桁5口5秒</label>
+                        <input type="radio" name="lev_flash" value="8" id="lev_flash_8"><label for="lev_flash_8">レベル8 2桁10口10秒</label>
+                        <input type="radio" name="lev_flash" value="9" id="lev_flash_9"><label for="lev_flash_9">レベル9 2桁10口8秒</label>
+                        <input type="radio" name="lev_flash" value="10" id="lev_flash_10"><label for="lev_flash_10">レベル10 2桁10口5秒</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="lev_flash" value="11" id="lev_flash_11"><label for="lev_flash_11">レベル11 3桁5口10秒</label>
+                        <input type="radio" name="lev_flash" value="12" id="lev_flash_12"><label for="lev_flash_12">レベル12 3桁5口5秒</label>
+                        <input type="radio" name="lev_flash" value="13" id="lev_flash_13"><label for="lev_flash_13">レベル13 3桁5口3秒</label>
+                        <input type="radio" name="lev_flash" value="14" id="lev_flash_14"><label for="lev_flash_14">レベル14 3桁10口8秒</label>
+                        <input type="radio" name="lev_flash" value="15" id="lev_flash_15"><label for="lev_flash_15">レベル15 3桁10口5秒</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="lev_flash" value="16" id="lev_flash_16"><label for="lev_flash_16">レベル16 3桁20口8秒</label>
+                        <input type="radio" name="lev_flash" value="17" id="lev_flash_17"><label for="lev_flash_17">レベル17 3桁20口5秒</label>
+                        <input type="radio" name="lev_flash" value="18" id="lev_flash_18"><label for="lev_flash_18">レベル18 3桁20口2秒</label>
+                        <input type="radio" name="lev_flash" value="19" id="lev_flash_19"><label for="lev_flash_19">レベル19 4桁20口10秒</label>
+                        <input type="radio" name="lev_flash" value="20" id="lev_flash_20"><label for="lev_flash_20">レベル20 5桁30口5秒</label>
+                    </div>
+                </form>
+            </div>
+            <div id="enter">
+                <input type="button" value="スタート" id="strat_button" onclick="start()">
+            </div>
+        </div>
+        <div id="game" style="display: none;">
+            <p id="main_str"></p>
+            <div id="input_answer" style="display: none;">
+                <input type="number" id="answer" placeholder="答えを入力">
+                <input type="button" value="回答" id="answer_button">
+            </div>
+        </div>
+        <div id="answer_show" style="display: none;">
+            <div id="answer_center"></div>
+            <div id="answer_next">
+                <input type="button" value="次へ" id="nb" onclick="show_your_lank()">
+            </div>
+        </div>
+        <div id="your_lank" style="display: none;">
+            <div id="yl_block">
+                <p id="yl_lev">レベル0</p>
+                <p id="yl_p">不明</p>
+                <input type="button" value="トップ" id="go_top" onclick="goTop()">
+            </div>
+        </div>
+    </div>
+    <div id="pan_list">
+        <a href="../../../../InT.html">Inforde Top</a><em>></em><a href="../../../Ing/Ing.html">Inforde GAME</a><em>></em><em>ただのフラッシュ暗算</em>
+    </div>
+    <div id="linkArea">
+        <h2 id="linkAreaTitle">おすすめのゲーム</h2>
+        <a href="../fupyon.html" class="oneArea">
+            <div class="loImg">
+                <img src="../fupyon_files/ぴょんぴょんボールズ_screen.PNG" alt="タイトル画像">
+            </div>
+            <div class="loStr">
+                <p class="loTitle">ぴょんぴょんボールズ</p>
+                <p class="loDescription">ぴょんぴょんボールズは障害物を飛び越えていき、できるだけ長く生きれるようにするゲームです。</p>
+            </div>
+        </a>
+        <a href="../fumath.html" class="oneArea">
+            <div class="loImg">
+                <img src="../fumath_files/ただのオセロ_screen.PNG" alt="タイトル画像">
+            </div>
+            <div class="loStr">
+                <p class="loTitle">ただのオセロ</p>
+                <p class="loDescription">ただのオセロです。一人でも二人でも楽しむことができます。</p>
+            </div>
+        </a>
+    </div>
+</body>
+</html>

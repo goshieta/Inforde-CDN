@@ -1,0 +1,132 @@
+/*全体*/
+body{
+    margin: 0;
+}
+
+/*バー*/
+#bar{
+    animation: bar_show 0.5s;
+    padding: 10px 0px;
+    position: fixed;
+    background-color: rgb(66, 180, 0);
+    width: 100%;
+    margin: 0;
+    z-index: 100;
+}
+@keyframes bar_show{
+    0%{
+        top: -200px;
+    }
+    100%{
+        top: 0px;
+    }
+}
+#beh_bar{
+    width: 100%;
+    height: 90px;
+}
+#bar p{
+    color: white;
+}
+#title{
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0;
+    margin-left: 10px;
+    padding-left: 60px;
+}
+#title_div{
+    display: flex;
+    align-items: center;
+}
+.game{
+    color: black;
+    font-style: normal;
+}
+/*ハンバーガー*/
+#title_menu_hun span{
+    margin: 7px 0;
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    display: block;
+}
+#title_menu_hun{
+    position: fixed;
+    z-index: 200;
+    width: 35px;
+    cursor: pointer;
+    display: block;
+    margin: 0 10px;
+    margin-top: 13px;
+    margin-left: 20px;
+}
+#hum_menu{
+    animation: menu_show 0.5s;
+    position: fixed;
+    width: 250px;
+    z-index: 200;
+    background-color: white;
+    height: 100vh;
+    padding: 10px;
+    padding-top: 50px;
+}
+#hum_menu.hide{
+    animation: menu_hide 0.5s;
+}
+#hum_menu a{
+    font-size: 20px;
+    padding: 10px 0;
+    display: block;
+    padding-left: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: green;
+}
+@keyframes menu_hide{
+    0%{
+        left: 0px;
+    }
+    100%{
+        left: -300px;
+    }
+}
+@keyframes menu_show{
+    0%{
+        left: -300px;
+    }
+    100%{
+        left: 0px;
+    }
+}
+#hum_menu a:hover{
+    background-color: rgb(224, 224, 224);
+}
+#back_gray{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.452);
+    z-index: 150;
+}
+@media screen and (max-width:768px){
+    #title_div{
+        padding: 0;
+    }
+    #title{
+        margin: 0 auto;
+        padding: 0;
+    }
+}
+
+/*パンくずリスト*/
+#pan_list{
+    text-align: center;
+    padding: 10px 0;
+}
+#pan_list a{
+    color: green;
+}
+#pan_list em{
+    font-style: normal;
+}

@@ -1,0 +1,52 @@
+.one_watch{
+    text-align: center;
+    width: 200px;
+    border-radius: 50%;
+    margin: 10px auto;
+    padding: 30px;
+    height: 200px;
+    background-color: rgb(215, 222, 228);
+    position: relative;
+    flex-shrink: 0;
+}
+.ow_time{
+    font-weight: bold;
+    font-size: 30px;
+    margin: 0;
+}
+.backCanvas{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+#bigWatchArea{
+    margin: 20px 0;
+}
+/*ミニ時計*/
+.mini_watch{
+    transform: scale(0.7);
+}
+.mini_watch .ow_city{
+    font-size: 20px;
+    margin: 0;
+    margin-top: 5px;
+}
+.mini_watch .ow_day{
+    font-size: 20px;
+}
+#smallWatchArea{
+    display: flex;
+    overflow: scroll;
+    width: 100%;
+    margin-top: auto;
+    /*firefox*/
+    scrollbar-width: none;
+}
+/*webkit*/
+#smallWatchArea::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+}
+#smallWatchArea .one_watch{
+    margin: 0;
+}

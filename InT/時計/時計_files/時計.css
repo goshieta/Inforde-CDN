@@ -1,0 +1,107 @@
+/*全体*/
+body{
+    display: flex;
+    height: 100vh;
+    margin: 0;
+}
+::-webkit-scrollbar	{
+    width: 10px;
+}
+::-webkit-scrollbar-track{
+    background-color: rgb(235, 235, 235);
+}
+::-webkit-scrollbar-thumb{
+    border-radius: 5px;
+    background-color: rgb(139, 139, 139);
+}
+
+/*時計*/
+#clock{
+    padding: 10px;
+    border-right: solid 1px gray;
+    width: 50%;
+    text-align: center;
+    padding-top: 100px;
+}
+#ymd_web{
+    font-size: 20px;
+}
+#hms_web{
+    font-size: 60px;
+    font-weight: bold;
+}
+#dev_div{
+    margin: 0 auto;
+    border: solid 2px green;
+    line-height: 15px;
+}
+#hms_dev{
+    font-size: 30px;
+    line-height: 30px;
+}
+
+/*タイマー*/
+#timer{
+    width: 50%;
+}
+#timer_floor{
+    height: calc(100% - 60px);
+    overflow: auto;
+}
+#plus{
+    display: flex;
+    height: 59px;
+    border-top: solid 1px gray;
+    background-color: white;
+}
+#plus div{
+    width: 50%;
+    text-align: center;
+    cursor: pointer;
+    background-color: white;
+}
+#plus div:hover{
+    background-color: rgb(224, 252, 224);
+}
+
+.time_part{
+    margin: 20px;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    box-shadow: 3px 3px 10px 0 black;
+}
+.display_timer p{
+    padding-right: 50px;
+    font-size: 50px;
+    line-height: 50px;
+    margin: 0;
+}
+.time_part input{
+    background-color: white;
+    cursor: pointer;
+    outline: none;
+    padding: 0 10px 0 10px;
+    appearance: none;
+    font-size: 18px;
+    margin: 10px;
+    border-radius: 5px;
+}
+.ti_start{
+    border: solid 1px blue;
+}
+.ti_start:hover{
+    background-color: rgb(241, 241, 255);
+}
+.ti_stop{
+    border: solid 1px green;
+}
+.ti_stop:hover{
+    background-color: rgb(224, 255, 224);
+}
+.ti_del{
+    border: solid 1px red;
+}
+.ti_del:hover{
+    background-color: rgb(255, 230, 230);
+}

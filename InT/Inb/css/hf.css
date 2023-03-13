@@ -1,0 +1,186 @@
+/*全体*/
+body{
+    margin: 0;
+}
+p{
+    margin: 0;
+}
+
+/*ヘッダー*/
+#header{
+    background-color: white;
+    display: flex;
+    position: fixed;
+    width: 100%;
+    padding: 5px 0;
+    z-index: 100;
+    align-items: center;
+    padding-left: 50px;
+    box-sizing: border-box;
+}
+#contents{
+    padding-top: 56px;
+}
+#title{
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+}
+#header a{
+    text-decoration: none;
+}
+#bar_icon{
+    display: block;
+    width: 30px;
+    height: 30px;
+}
+#title_p{
+    color: black;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 4px;
+}
+#space_can{
+    display: block;
+}
+#space p{
+    color: black;
+    padding: 0 10px;
+}
+#space{
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+}
+
+#luck_title,#lui_title{
+    padding-right: 0px !important;
+}
+#luck_body,#lui_body{
+    font-size: 17px;
+    font-weight: bold;
+    padding-left: 5px !important;
+}
+@media screen and (max-width:768px){
+    #space{
+        display: none;
+    }
+    #header{
+        width: 100vw;
+    }
+}
+/*ハンバーガー*/
+#hamburger{
+    height: fit-content;
+    cursor: pointer;
+    margin: 0 5px;
+    position: fixed;
+    z-index: 300;
+    padding: 10px 5px;
+}
+#hamburger span{
+    display: block;
+    width: 26px;
+    height: 3px;
+    border-radius: 2px;
+    background-color: black;
+    margin: 6px;
+}
+
+/*フッター*/
+#footer{
+    background: linear-gradient(to top,rgb(255, 241, 241),rgb(192, 192, 192));
+    padding: 20px 0;
+}
+#foot_title{
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    margin: 0 auto;
+}
+#foot_title img{
+    width: 50px;
+    height: 50px;
+}
+#foot_title_p{
+    font-size: 40px;
+    font-weight: bold;
+    color: red;
+    line-height: 40px;
+    padding-left: 10px;
+}
+#foot_link{
+    width: fit-content;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+#foot_link a{
+    text-decoration: none;
+    color: black;
+    padding: 0 10px;
+}
+@media screen and (max-width:768px){
+    #footer{
+        display: none;
+    }
+}
+
+/*ハンバーガーメニュー開いたとき*/
+#backgray{
+    width: 100%;
+    height: 200vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    z-index: 200;
+}
+#hamMenu{
+    height: 100vh;
+    width: 250px;
+    background-color: white;
+    padding: 30px;
+    position: fixed;
+    z-index: 300;
+    padding-top: 50px;
+    padding-left: 5px;
+    animation: hamMenuShowAnimation 0.5s forwards;
+}
+@keyframes hamMenuShowAnimation{
+    from{
+        left: -290px;
+    }
+    to{
+        left: 0px;
+    }
+}
+#hamMenu a{
+    position: relative;
+    font-size: 20px;
+    width: 100%;
+    color: rgb(255, 51, 0);
+    z-index: 500;
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0;
+    border-radius: 5px;
+}
+#hamMenu a:hover{
+    background-color: rgb(218, 218, 218);
+}
+#hamMenu.hide{
+    animation: hideAnimation 0.5s forwards;
+}
+@keyframes hideAnimation{
+    0%{
+        overflow: hidden;
+        left: 0px;
+    }
+    100%{
+        overflow: hidden;
+        left: -290px;
+    }
+}
+#hamMenu.hide+#backgray{
+    display: none;
+}

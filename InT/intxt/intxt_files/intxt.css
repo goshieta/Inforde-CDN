@@ -1,0 +1,101 @@
+/*全体*/
+body{
+    margin: 0;
+    height: 100vh;
+    background-color: rgb(239, 239, 255);
+}
+textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    resize: none;
+    padding: 0;
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+::-webkit-scrollbar	{
+    width: 10px;
+}
+::-webkit-scrollbar-track{
+    background-color: rgb(235, 235, 235);
+}
+::-webkit-scrollbar-thumb{
+    border-radius: 5px;
+    background-color: rgb(139, 139, 139);
+}
+
+
+/*タブ*/
+#tab{
+    background-color: white;
+    border-image: linear-gradient(to right bottom,red, orange, green, blue, indigo)200;
+    border-bottom: solid 1px;
+}
+#menu_a,#menu_b{
+    display: flex;
+    align-items: center;
+}
+#menu_a{
+    padding: 10px;
+}
+#menu_b{
+    padding-bottom: 5px;
+}
+#title{
+    padding: 0px 5px;
+    border-top: solid 3px rgb(68, 68, 255);
+    border-bottom: solid 3px rgb(68, 68, 255);
+    background-color: rgb(121, 121, 255);
+}
+#title p{
+    font-size: 25px;
+    margin: 0;
+    color: white;
+    font-weight: bold;
+}
+#big_menu{
+    padding-left: 30px;
+}
+#big_menu a{
+    margin: 10px;
+    font-weight: bold;
+}
+.mb_one{
+    margin: 0px 20px;
+    padding: 0px 20px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+.mb_one:hover{
+    font-weight: bold;
+    background-color: rgb(209, 255, 209);
+}
+.mb_one p{
+    line-height: 20px;
+    margin: 5px 0;
+}
+
+
+/*エディタ部分*/
+#cont{
+    height: calc(100% - 100px);
+}
+#edita,#preview{
+    overflow: auto;
+    width: 100%;
+}
+#edita{
+    font-family:  "ヒラギノ角ゴ ProN W3";
+    font-size: 15px;
+    background-color: white;
+}
+#preview{
+    padding: 0 50px;
+}
+.one_text{
+    width: 22cm;
+    margin: 0 auto;
+    background-color: white;
+    box-shadow: 3px 3px 6px gray;
+}

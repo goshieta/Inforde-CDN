@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-9KV7NYMY0W"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-9KV7NYMY0W');
+        </script>
+        <!--powered by Inforde GAME-->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <meta name="description" content="今時な恋愛系のアドベンチャーゲームです。あの選択肢を選んで進めるやつです。一応無料ブラウザゲームです。">
+        <title>ドキドキ！わっかない！</title>
+        <link rel="icon" href="./Ing.png">
+        <link rel="stylesheet" href="./bar.css">
+        <link rel="stylesheet" href="./fuoto_files/fuoto.css">
+        <script src="./fuoto_files/fuoto.js"></script>
+    </head>
+    <body>
+        <div id="bar">
+            <div id="title_div">
+                <p id="title">Inforde <em class="game">GAME</em></p>
+            </div>
+            <div id="title_menu">
+                <div onclick="location.href='../Ing.html'">
+                    <p>トップ</p>
+                </div>
+                <div onclick="location.href='../../../InT.html'">
+                    <p>Inforde</p>
+                </div>
+                <div onclick="location.href='../../統合画面/統合画面_Infordeについて.html'">
+                    <p>Infordeとは</p>
+                </div>
+                <div onclick="location.href='../../統合画面/統合画面_報告・提案.html'">
+                    <p>お問い合わせ</p>
+                </div>
+            </div>
+        </div>
+        <div id="beh_bar"></div>
+        <div id="content">
+            <div id="content_box">
+                <div id="top">
+                    <p id="content_title">ドキドキ！わっかない！</p>
+                    <input type="button" value="始める" id="start_button" onclick="start()"><br>
+                    <input type="button" value="プライバシーポリシー" onclick="window.open('../../統合画面/統合画面_プライバシーポリシー.html','_blank')"><br>
+                    <input type="button" value="マツケンサンバ" onclick="window.open('https:\/\/www.youtube.com/watch?v=XazyhnymUQo','_blank')"><br>
+                </div>
+                <div id="game" style="display: none;">
+                    <div id="font_floor" style="display: none;">
+                        <p id="font_name"></p>
+                        <p id="font_game"></p>
+                    </div>
+                    <div id="img_floor" style="display: none;">
+                        <img id="img_game">
+                    </div>
+                </div>
+                <div id="game_over" style="display: none;">
+                    <p id="over_title">ゲームオーバー</p>
+                    <P id="siin"></P>
+                    <input type="button" id="go_top_button" class="button_prot" value="トップへ" onclick="go_t()">
+                </div>
+                <div id="game_clear" style="display: none;">
+                    <p id="over_title">ゲームクリア</p>
+                    <P id="mes_clear"></P>
+                    <input type="button" id="go_top_button" class="button_prot" value="トップへ" onclick="go_t()">
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

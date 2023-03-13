@@ -1,0 +1,349 @@
+/*スマホメニューCSS*/
+/*　ハンバーガーメニューボタン　*/
+.hamburger {
+    display : none;
+    position: fixed;
+    z-index : 3;
+    right : 20px;
+    top   : 20px;
+    width : 42px;
+    height: 42px;
+    cursor: pointer;
+    text-align: center;
+}
+.hamburger span {
+    display : block;
+    position: absolute;
+    width   : 30px;
+    height  : 2px ;
+    left    : 6px;
+    background : black;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition   : 0.3s ease-in-out;
+    transition        : 0.3s ease-in-out;
+}
+.hamburger span:nth-child(1) {
+    top: 10px;
+}
+.hamburger span:nth-child(2) {
+    top: 20px;
+}
+.hamburger span:nth-child(3) {
+    top: 30px;
+}
+
+/* スマホメニューを開いてる時のボタン */
+.hamburger.active span:nth-child(1) {
+    top : 16px;
+    left: 6px;
+    background :#fff;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform   : rotate(-45deg);
+    transform        : rotate(-45deg);
+}
+
+.hamburger.active span:nth-child(2),
+.hamburger.active span:nth-child(3) {
+    top: 16px;
+    background :#fff;
+    -webkit-transform: rotate(45deg);
+    -moz-transform   : rotate(45deg);
+    transform        : rotate(45deg);
+}
+
+/* メニュー背景　*/
+nav.globalMenuSp {
+    position: fixed;
+    z-index : 2;
+    top  : 0;
+    left : 0;
+    color: #fff;
+    background: rgba( 71,70,73,0.6 );
+    text-align: center;
+    width: 100%;
+    transform: translateX(-100%);
+    transition: all 0.6s;
+}
+
+nav.globalMenuSp ul {
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+}
+
+nav.globalMenuSp ul li {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    transition: .4s all;
+}
+nav.globalMenuSp ul li:last-child {
+    padding-bottom: 0;
+}
+nav.globalMenuSp ul li:hover{
+    background :#ddd;
+}
+
+nav.globalMenuSp ul li a {
+    display: block;
+    color: #fff;
+    padding: 1em 0;
+    text-decoration :none;
+}
+
+/* クリックでjQueryで追加・削除 */
+nav.globalMenuSp.active {
+    opacity: 100;
+    display: block;
+        transform: translateX(0%);
+}
+
+
+
+/*全体*/
+body{
+    margin: 0;
+}
+p{
+    margin: 0;
+}
+input[type="text"],button,input[type="button"],input[type='color']{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    appearance: none;
+}
+input[type="text"],input[type="url"]{
+    width: 300px;
+    border-bottom: solid 2px orange;
+    height: 30px;
+    padding-left: 10px;
+    font-size: 15px;
+    background-color: rgb(247, 247, 247);
+}
+@keyframes input_anime{
+    0%{
+        background-color: white;
+        width: 300px;
+    }
+    100%{
+        background-color: rgb(218, 218, 218);
+        width: 500px;
+    }
+}
+input[type="text"]:focus{
+    animation: input_anime 0.5s;
+    background-color: rgb(218, 218, 218);
+    width: 500px;
+}
+input[type="button"]{
+    margin: 10px;
+    padding: 7px 30px 7px 30px;
+    color: white;
+    background-color: rgb(0, 82, 0);
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 15px;
+}
+input[type="button"]:hover{
+    background-color: rgb(0, 104, 0);
+}
+input[type="button"]:active{
+    background-color: rgb(0, 161, 0);
+}
+#can_see{
+    display: flex;
+}
+#menu_tab{
+    padding: 20px;
+    background-color: black;
+    position: fixed;
+    height: 100vh;
+    width: 200px;
+}
+#menu_tab a{
+    display: block;
+    padding: 10px 20px;
+    margin: 10px 0px;
+    color: white;
+}
+#menu_tab a:nth-child(1){
+    font-weight: bold;
+    font-size: 1.2em;
+    background-color: rgb(37, 37, 37);
+}
+#menu_tab a:hover{
+    background-color: rgba(255, 255, 255, 0.493);
+    cursor: pointer;
+    border-radius: 2px;
+}
+#content{
+    width: 100%;
+    margin-left: 250px;
+    padding: 20px;
+}
+.con_title{
+    padding: 0.25em 0.5em;/*上下 左右の余白*/
+    color: #494949;/*文字色*/
+    background: #e9f6ff;/*背景透明に*/
+    border-left: solid 5px #50aaff;/*左線*/
+    font-size: 20px;
+    font-weight: bold;
+    margin: 15px 0;
+    padding-right: 200px;
+    width: fit-content;
+}
+
+/*ラジオボタンのカスタマイズ*/
+input[type='radio']{
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    margin: -1px;
+}
+input[type='radio']+label{
+    padding: 10px;
+    border-radius: 5px;
+    border: solid 1px gray;
+    display: inline-block;
+    width: fit-content;
+    cursor: pointer;
+    margin: 10px 0px;
+}
+input[type='radio']+label:hover{
+    background-color: rgb(231, 231, 231);
+}
+input[type='radio']:checked+label{
+    animation: radio_anime 0.5s;
+    background-color: rgb(255, 85, 85);
+    color: white;
+    font-weight: bold;
+}
+@keyframes radio_anime{
+    0%{
+        background-color: rgb(231, 231, 231);
+    }
+    100%{
+        background-color: rgb(255, 85, 85);
+    }
+}
+#con_theme_form label{
+    width: 100px;
+    text-align: center;
+}
+#con_pre{
+    border: solid 1px gray;
+}
+#con_form_color{
+    padding: 5px 0px;
+    margin-bottom: 10px;
+    width: fit-content;
+}
+#con_form_color label{
+    border-radius: 5px;
+    box-shadow: 2px 2px 6px rgb(82, 82, 82);
+    padding: 5px;
+    display: inline-block;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+#con_form_color input{
+    position: relative;
+    top: 3px;
+}
+#con_background{
+    margin-bottom: 10px;
+}
+#con_mySite_form label{
+    width: 100px;
+    text-align: center;
+}
+#con_defImg img{
+    height: 130px;
+    border: solid 8px white;
+    border-radius: 5px;
+}
+#con_defImg img.select{
+    border: solid 8px black;
+}
+
+
+/*背景色のラジオボタン*/
+@keyframes yuu_ms_anime{
+    0%{
+        background-position: 100% 100%;
+    }
+    100%{
+        background-position: 0% 100%;
+    }
+}
+#con_mySite_form input[type='radio']:nth-child(5):hover+label{
+    background-color: rgb(255, 224, 224);
+}
+#con_mySite_form input[type='radio']:nth-child(5):checked+label{
+    animation: yuu_ms_anime 0.5s;
+    background: linear-gradient(to right,rgb(255, 200, 200),rgb(255, 242, 219),rgb(255, 224, 224),rgb(255, 224, 224));
+    background-position: 0% 100%;
+    background-size: 300% 100%;
+    color: black;
+}
+@keyframes ocean_ms_anime{
+    0%{
+        background-position: 100% 100%;
+    }
+    100%{
+        background-position: 0% 100%;
+    }
+}
+#con_mySite_form input[type='radio']:nth-child(7):hover+label{
+    background-color: rgb(255, 227, 255);
+}
+#con_mySite_form input[type='radio']:nth-child(7):checked+label{
+    animation: ocean_ms_anime 0.5s;
+    background: linear-gradient(to right,rgb(124, 181, 255),rgb(244, 118, 255),rgb(255, 227, 255),rgb(255, 227, 255));
+    background-size: 300% 100%;
+    color: black;
+}
+@keyframes mori_ms_anime{
+    0%{
+        background-position: 100% 100%;
+    }
+    100%{
+        background-position: 0% 100%;
+    }
+}
+#con_mySite_form input[type='radio']:nth-child(9):hover+label{
+    background-color: rgb(213, 243, 255);
+}
+#con_mySite_form input[type='radio']:nth-child(9):checked+label{
+    animation: mori_ms_anime 0.5s;
+    background-size: 300% 100%;
+    background-image: linear-gradient(to right, #91dfab, #b0fff1,rgb(213, 243, 255),rgb(213, 243, 255));
+    color: black;
+}
+#title{
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    font-style: normal;
+}
+
+@media screen and (max-width:768px){
+    #menu_tab{
+        display:none;
+    }
+    #content{
+        margin: 0;
+    }
+    .hamburger{
+        display: block;
+    }
+}

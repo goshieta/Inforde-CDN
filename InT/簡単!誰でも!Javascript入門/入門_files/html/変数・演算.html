@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-9KV7NYMY0W"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-9KV7NYMY0W');
+        </script>
+        <meta charset="utf-8">
+        <meta name="description" content="JavaScript入門者のためのサイトです。プログラミングを一回もやったことがないという人を対象に書いていますが、それ以外の方も歓迎です。">
+        <meta name="viewport" content="width=device-width">
+        <title>変数・演算　簡単！Javascript入門</title>
+        <link rel="stylesheet" href="../../入門_files/入門.css">
+        <link rel="icon" href="../../入門_files/入門.png">
+        <script src="../../入門_files/入門.js"></script>
+        <script src="../prism.js/prism.js"></script>
+        <link rel="stylesheet" href="../prism.js/prism.css">
+    </head>
+    <body>
+        <div id="bar">
+            <div id="title_div">
+                <p id="title">簡単！Javascript入門</p>
+            </div>
+            <div id="title_menu">
+                <div onclick="location.href='../../入門.html'">
+                    <p>トップ</p>
+                </div>
+                <div onclick="location.href='../../../../InT.html'">
+                    <p>Inforde</p>
+                </div>
+                <div onclick="location.href='../../../統合画面/統合画面_Infordeについて.html'">
+                    <p>Infordeとは</p>
+                </div>
+                <div onclick="location.href='../../../統合画面/統合画面_報告・提案.html'">
+                    <p>お問い合わせ</p>
+                </div>
+            </div>
+        </div>
+        <div id="beh_bar"></div>
+        <div id="content">
+            <p class="title_art">変数・演算</p>
+            <p>今回のテーマは変数・演算です。どちらも何となく想像できるのではないかなと思います。それなりにボリュームはありますが、すぐに理解できる内容だと思うので頑張ってください。</p>
+            <p class="title_art">演算子とは</p>
+            <p>まず演算子について学びます。その前にJavaScriptでの<em class='string'>ログ出力</em>のやり方を説明します。ログはWEBブラウザ上でctrl+shift+Iを押すか、メニューの開発者のところの開発者ツールを選ぶか、右クリックしたときに表示される要素を検証を押したときにあらわれる<em class="stt">開発者ツール</em>の一番上にタブがあると思うのでそこにある<em class="string">コンソール</em>をクリックすることで見れます。（コンソールのボタンが見当たらない場合は多分隠れているので>>のボタンを押して表示させるか、開発者ツールの画面を大きくしてください。)エラー情報などはここに出力されます。JavaScriptがうまく動かないときはここを確認してください。</p>
+            <p>このように書いて、ブラウザで実行すると</p>
+            <pre><code class="language-javascript">
+                console.log('我々は地球人だ')
+            </code></pre>
+            <p>コンソール上に「我々は地球人だ」と出てきます。内容を変えていろいろ試してみてください。またこのように書くと</p>
+            <pre><code class="language-javascript">
+                alert('Google Chrome万歳!')
+            </code></pre>
+            <p>Operaブラウザに「Google Chrome万歳!」と言わせることができます。</p>
+            <img src="./image/alert.PNG">
+            <p>では本題の演算子に入っていきましょう。演算子とは+-などといった数値を計算するのに使う記号のことです。JavaScriptではこれらを使って計算ができます。例を見てみましょう</p>
+            <pre><code class="language-javascript">
+                console.log(10+5)//足し算は+演算子を使います
+                console.log(10-5)//引き算は-演算子を使います
+                console.log(10*5)//掛け算は*演算子を使います
+                console.log(10/5)//割り算は/演算子を使います
+                console.log(10**5)//平方の計算は**演算子を使います。（この場合10の5乗）
+                console.log(10%5)//割り算の余りは%演算子を使います
+            </code></pre>
+            <p>これを実行するとそれぞれ</p>
+            <pre><code class="language-javascript">
+                >>15
+                >>5
+                >>50
+                >>2
+                >>100000
+                >>0
+            </code></pre>
+            <p>がコンソールに出力されます。計算通りですね。</p>
+            <p class="title_art">変数と定数</p>
+            <p>演算子について理解したところで次は変数と定数についてやっていきましょう。<em class="string">変数</em>とは簡単に言うと<em class="stt">値の入った箱のようなものです</em>。この箱の中身は自由に変えることができます。例えばハイジという名前の箱を作り中に812という数字をを入れましょう。この時「ハイジの箱の中身は何ですか？」と聞かれたら812ですよね。そして次に箱の中身を「アルプス」という文字列に入れ替えましょう。すると「ハイジの箱の中身は何ですか？」とまた聞かれたとき答えは「アルプス」になります。これが変数の基本的な考え方です。</p>
+            <p>では変数を作ってみましょう(≒箱を作る)。変数の定義は<em class="string">var</em>または<em class="string">let</em>または<em class="string">const</em>を使います。もともとはvarだけでしたが途中からletとconstが入りました。現在<em class='stt'>varは非推奨</em>のためletかconstを使ったほうがいいです。letとconstの違いですが、letは値を変えることができる（≒箱の中身を自由に変えられる）のに対してconstは値を変えることができません。(≒箱の中身を変えられない）</p>
+            <p>では実際に書いてみましょう。</p>
+            <pre><code class="language-javascript">
+                var a=1
+                let b=2
+                const c=3
+                console.log(a)
+                console.log(b)
+                console.log(c)
+            </code></pre>
+            <p>これを実行すると</p>
+            <pre><code class="language-javascript">
+                >>1
+                >>2
+                >>3
+            </code></pre>
+            <p>キレイに出力されました。</p>
+            <p>一応意味を確認しておきます。最初のvarやletなどは変数を宣言するよという目印みたいなものです。（とりあえず今はそういう理解でいてください）そしてそこに一つ半角スペースを入れ、変数の名前を書きます。ここにはaとかbとか書いていますがなんでもいいです。例えばmondayとかAppleとかgo_toとか。ただし、だからと言ってなんでもつけていいわけではなく以下のルールに従う必要があります。</p>
+            <div class="point">
+                <p>1. $と_以外の特殊記号は使うことができない。</p>
+                <p>2. 予約語を用いることはできない。(let,var,consoleなど)</p>
+                <p>3. 変数名の先頭に数字をつけてはならない。</p>
+            </div>
+            <p>この３つのルールがあるので覚えておいてください。</p>
+            <p>なので例えば１番の例だと!!SAGA!!とか,,,,,みたいな変数名はダメということですね。二番は飛ばして三番は47todouhukennとか777みたいな変数名は<em class="stt">ダメ</em>ということです。</p>
+            <p>結構話がそれましたが変数名を書いた後の=は<em class="green">代入演算子</em>と呼ばれるものです。左側の変数に右側の数値を代入、入れてあげているのですね。</p>
+            <p>変数の中身を入れ替える時も<em class="stt">代入演算子を使います。</em>以下のコードは変数の中身を入れ替える作業が途中に含まれています。</p>
+            <pre><code class="language-javascript">
+                let have='持つ' //変数haveを宣言
+                console.log(have)
+                have='食べる' //ここで再代入（入れ替え）している。
+                console.log(have)
+            </code></pre>
+            <p>これの結果は</p>
+            <pre><code class="language-javascript">
+                >>持つ
+                >>食べる
+            </code></pre>
+            <p>しっかりと中身が入れ替わっていましたね。ちなみにjavascriptでは文字をあらわすときは<em class="string">''または""</em>で囲む必要があります。数字などは囲む必要がありません。またHTMLとCSSと違い大文字小文字の区別があります。そこらへん気を付けてください。</p>
+            <p>最後に変数同士の演算をさせてみましょう。</p>
+            <pre><code class="language-javascript">
+                let hoge=675
+                let a=32
+                let b=10
+                let piyo=(hoge+a*b)/5
+                console.log(piyo%6)
+            </code></pre>
+            <p>これまでちゃんと読んできた皆さんなら、このコードを実行したときに出る値が何かわかりますよね。</p>
+            <p>答えは1です。</p>
+            <p>まずは変数piyoに代入されている値を整理してみましょう。hogeは675aは32,bは10なので(hoge+a*b)/5は(675+32*10)/5です。カッコ内を優先的に計算するので675+32*10は32*10は320のため675+320で995。これを5で割ると199です。</p>
+            <p>よって変数piyoには199が代入されています。そして最後にpiyo%6の答えがログに出力されるので199%6つまり199を6で割った時の余り...つまり1がログに出力されるのです。</p>
+            <p>これで今回の講座は終わりです。<em class="stt">お疲れさまでした。</em></p>
+        </div>
+        <div id="next_art" onclick="location.href='./条件分岐.html'">
+            <p>次の記事>></p>
+            <p class="ne_title">基本編:条件分岐</p>
+        </div>
+        <div id="na_ne"></div>
+    </body>
+</html>

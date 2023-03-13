@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-9KV7NYMY0W"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-9KV7NYMY0W');
+        </script>
+        <meta charset="utf-8">
+        <meta name="description" content="このページはInfordeの設定、ヘルプ、説明などのページを統合したものです">
+        <meta name="viewport" content="width=device-width">
+        <title>Inforde 統合画面(Infordeについて)</title>
+        <link rel="icon" href="../inforde-icon.png">
+        <link rel="stylesheet" href="./統合画面_files/統合画面.css">
+        <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
+        <script>
+                //サイドメニュー
+                $(function() {
+                $('.hamburger').click(function() {
+                    $(this).toggleClass('active');
+            
+                    if ($(this).hasClass('active')) {
+                        $('.globalMenuSp').addClass('active');
+                    } else {
+                        $('.globalMenuSp').removeClass('active');
+                    } 
+                
+                });
+            });
+            //メニュー内を閉じておく
+            $(function() {
+                $('.globalMenuSp a[href]').click(function() {
+                    $('.globalMenuSp').removeClass('active');
+                $('.hamburger').removeClass('active');
+
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="globalMenuSp">
+            <ul>
+                <li><a href="./統合画面_設定.html">設定</a></li>
+                <li><a href="./統合画面_プライバシーポリシー.html">プライバシーポリシー</a></li>
+                <li><a href="./統合画面_Infordeについて.html">Infordeについて</a></li>
+                <li><a href="./統合画面_ヘルプ.html">ヘルプ</a></li>
+                <li><a href="./統合画面_報告・提案.html">報告・提案</a></li>
+            </ul>
+        </nav>
+        <div id="bar">
+            <div id="ba_title">
+                <img src="../inforde-icon.png">
+                <em>Inforde</em>
+            </div>
+            <div id="ba_content">
+                <div class="bc_elem" id="bce_setting">
+                    <a href="./統合画面_設定.html">設定</a>
+                </div>
+                <div class="bc_elem" id="bce_pra">
+                    <a href="./統合画面_プライバシーポリシー.html">プライバシーポリシー</a>
+                </div>
+                <div class="bc_elem" id="bce_about">
+                    <a href="./統合画面_Infordeについて.html">Infordeについて</a>
+                </div>
+                <div class="bc_elem" id="bce_help">
+                    <a href="./統合画面_ヘルプ.html">ヘルプ</a>
+                </div>
+                <div class="bc_elem" id="bce_tell">
+                    <a href="./統合画面_報告・提案.html">報告・提案</a>
+                </div>
+            </div>
+        </div>
+        <div id="bar_bottom"></div>
+        <div id="content">
+            <div class="content_mid">
+                <h1>Infordeについて</h1>
+                <h2>Infordeとは</h2>
+                <p>Infordeとは様々なページや検索エンジンへのリンクを持ったインターネットを使う上において入り口となるようなサイトです。検索エンジンはGoogleだけでなくYahoo!,Bing,Naverなど様々な検索エンジンから選択することができます。（検索ボックス左の画像アイコンを押してみてください)</p>
+                <p>またニュース機能や時計、天気といった基本的なウィジェットなどもついています。さらに様々な付属アプリケーションも実装されているまたは実装される予定です。また基本的に広告は配置しません。</p>
+                <h2>Infordeの使い方</h2>
+                <p>インターネットの入り口となるページを目指しているので、パソコンの場合は設定でスタートページに設定する、スマートフォンの場合はホーム画面にアプリを追加するなどといったやり方で使うことを推奨しています。デフォルトでは黒いウィジェットに丸が動く背景ですが（ランダム）、設定で変更することができます。環境に合わせて変えてみてください。両側にウィジェット、真ん中に検索ボックスと、マイサイトがあり、マイサイトはサイトを追加ボタンから追加でき、編集ボタンで削除やドラッグして並び変えすることができます。</p>
+                <h2>スマホ対応について</h2>
+                <p>スマートフォンには対応していますが表示を最適化していない部分があるので一部は醜くなっている可能性があります。</p>
+                <h2>付属アプリケーションについて</h2>
+                <p>現在付属アプリケーションの数はそこまでありませんがこれからアップデートで増やしていく予定です。付属アプリはすべてトップページにInfordeサービスからアクセスすることが可能です。</p>
+                <h2>開発環境について</h2>
+                <p>開発の時のデバッグに使用しているのはOperaブラウザです。エディタはVisual studio codeを使用しています。</p>
+                <h2>対応ブラウザについて</h2>
+                <p>Opera,Vilvadi,Google Chrome,Micosoft Edgeには完全対応しています。Firefoxは対応していますが一部動作が不安定なことがあります。Safariには対応していませんが多分使えると思います。IEには完全非対応です。まともに動きません。Operaに乗り換えましょう。</p>
+            </div>
+        </div>
+    </body>
+</html>

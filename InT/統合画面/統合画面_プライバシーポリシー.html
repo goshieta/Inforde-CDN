@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-9KV7NYMY0W"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-9KV7NYMY0W');
+        </script>
+        <meta charset="utf-8">
+        <meta name="description" content="このページはInfordeの設定、ヘルプ、説明などのページを統合したものです">
+        <meta name="viewport" content="width=device-width">
+        <title>Inforde 統合画面(プライバシーポリシー)</title>
+        <link rel="icon" href="../inforde-icon.png">
+        <link rel="stylesheet" href="./統合画面_files/統合画面.css">
+        <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
+        <script>
+                //サイドメニュー
+                $(function() {
+                $('.hamburger').click(function() {
+                    $(this).toggleClass('active');
+            
+                    if ($(this).hasClass('active')) {
+                        $('.globalMenuSp').addClass('active');
+                    } else {
+                        $('.globalMenuSp').removeClass('active');
+                    } 
+                
+                });
+            });
+            //メニュー内を閉じておく
+            $(function() {
+                $('.globalMenuSp a[href]').click(function() {
+                    $('.globalMenuSp').removeClass('active');
+                $('.hamburger').removeClass('active');
+
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="globalMenuSp">
+            <ul>
+                <li><a href="./統合画面_設定.html">設定</a></li>
+                <li><a href="./統合画面_プライバシーポリシー.html">プライバシーポリシー</a></li>
+                <li><a href="./統合画面_Infordeについて.html">Infordeについて</a></li>
+                <li><a href="./統合画面_ヘルプ.html">ヘルプ</a></li>
+                <li><a href="./統合画面_報告・提案.html">報告・提案</a></li>
+            </ul>
+        </nav>
+        <div id="bar">
+            <div id="ba_title">
+                <img src="../inforde-icon.png">
+                <em>Inforde</em>
+            </div>
+            <div id="ba_content">
+                <div class="bc_elem" id="bce_setting">
+                    <a href="./統合画面_設定.html">設定</a>
+                </div>
+                <div class="bc_elem" id="bce_pra">
+                    <a href="./統合画面_プライバシーポリシー.html">プライバシーポリシー</a>
+                </div>
+                <div class="bc_elem" id="bce_about">
+                    <a href="./統合画面_Infordeについて.html">Infordeについて</a>
+                </div>
+                <div class="bc_elem" id="bce_help">
+                    <a href="./統合画面_ヘルプ.html">ヘルプ</a>
+                </div>
+                <div class="bc_elem" id="bce_tell">
+                    <a href="./統合画面_報告・提案.html">報告・提案</a>
+                </div>
+            </div>
+        </div>
+        <div id="bar_bottom"></div>
+        <div id="content">
+            <div class="content_mid">
+                <h1>プライバシーポリシー</h1>
+                <h2>当サイトが収集するデータと収集する理由</h2>
+                <p>当サイトではIPアドレスをはじめとするデータ収集を一切行いません。また検索履歴なども一切残りません。ただし、ユーザー自身が設定した情報（マイサイト、メモ等）はサーバーには送りませんが、お使いの端末のローカルストレージに保存されるのでご了承ください。</p>
+                <p>また当サイトでは、Googleによるアクセス解析ツール「Googleアナリティクス」を利用しています。このGoogleアナリティクスはトラフィックデータの収集のためにCookieを使用しています。このトラフィックデータは匿名で収集されており、個人を特定するものではありません。この機能はCookieを無効にすることで収集を拒否することが出来ますので、お使いのブラウザの設定をご確認ください。</p>
+                <p>詳しくは<a href="http://www.google.com/analytics/terms/jp.html">こちら</a>または<a href="https://www.google.com/intl/ja/policies/privacy/partners/">こちら</a>をご覧ください。</p>
+                <h2>他サイトからの埋め込みコンテンツ</h2>
+                <p>このサイトには画像など他サイトからの埋め込みコンテンツが存在します。他サイトからの埋め込みコンテンツは訪問者がそのサイトを訪れた時と同じように表示されます。</p>
+                <h2>当サイトのリンクについて</h2>
+                <p>当サイトに埋め込まれているリンクについてその先で起こったことには一切責任を負いません。またランダムアクセスなど一部ではリンク先から危険なサイトにつながる可能性があります。</p>
+            </div>
+        </div>
+    </body>
+</html>

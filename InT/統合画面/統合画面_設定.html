@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-9KV7NYMY0W"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-9KV7NYMY0W');
+        </script>
+        <meta charset="utf-8">
+        <meta name="description" content="このページはInfordeの設定、ヘルプ、説明などのページを統合したものです">
+        <meta name="viewport" content="width=device-width">
+        <title>Inforde 統合画面(設定)</title>
+        <link rel="icon" href="../inforde-icon.png">
+        <link rel="stylesheet" href="統合画面_files/統合画面_設定.css">
+        <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
+        <script src="./統合画面_files/統合画面_設定.js"></script>
+    </head>
+    <body>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="globalMenuSp">
+            <ul>
+                <li><a href="./統合画面_設定.html">設定</a></li>
+                <li><a href="./統合画面_プライバシーポリシー.html">プライバシーポリシー</a></li>
+                <li><a href="./統合画面_Infordeについて.html">Infordeについて</a></li>
+                <li><a href="./統合画面_ヘルプ.html">ヘルプ</a></li>
+                <li><a href="./統合画面_報告・提案.html">報告・提案</a></li>
+            </ul>
+        </nav>
+        <div id="can_see">
+            <div id="menu_tab">
+                <p id="title">Inforde</p>
+                <a href="./統合画面_設定.html">設定</a>
+                <a href="./統合画面_プライバシーポリシー.html">プライバシーポリシー</a>
+                <a href="./統合画面_Infordeについて.html">Infordeについて</a>
+                <a href="./統合画面_ヘルプ.html">ヘルプ</a>
+                <a href="./統合画面_報告・提案.html">報告・提案</a>
+            </div>
+            <div id="content">
+                <div id="con_back" class="con_con">
+                    <p class="con_title">背景の設定</p>
+                    <form id="con_form">
+                        <input type="radio" name="con_back" value="default" id="con_formr_1"><label class="radio" for="con_formr_1">動くカラフルな丸</label>
+                        <input type="radio" name="con_back" value="my_round" id="con_formr_2"><label class="radio" for="con_formr_2">様々な丸</label>
+                        <input type="radio" name="con_back" value="myURL" id="con_formr_3"><label class="radio" for="con_formr_3">画像URLから設定</label>
+                        <input type="radio" name="con_back" value="selIMG" id="con_formr_4"><label class="radio" for="con_formr_4">画像を選択</label><br><br>
+                        <input type="text" id="con_background" placeholder="画像のURLを入力" style="display:none;">
+                        <div id="con_form_color" style="display: none;">
+                            <label>背景色を選択<input type="color" list id="cp_con_form_back"></label>
+                            <label>丸の色を選択<input type="color" list id="cp_con_form_round"></label>
+                        </div>
+                        <div id="con_defImg" style="display: none;">
+                            <img src="../bgIMG/1.jpg" alt="画像1" onclick="bgImgSet(1)">
+                            <img src="../bgIMG/2.jpg" alt="画像2" onclick="bgImgSet(2)">
+                            <img src="../bgIMG/3.jpg" alt="画像3" onclick="bgImgSet(3)">
+                            <img src="../bgIMG/4.jpg" alt="画像4" onclick="bgImgSet(4)">
+                            <img src="../bgIMG/5.jpg" alt="画像5" onclick="bgImgSet(5)">
+                            <img src="../bgIMG/6.jpg" alt="画像6" onclick="bgImgSet(6)">
+                            <img src="../bgIMG/7.jpg" alt="画像7" onclick="bgImgSet(7)">
+                            <img src="../bgIMG/8.jpg" alt="画像8" onclick="bgImgSet(8)">
+                            <img src="../bgIMG/9.jpg" alt="画像9" onclick="bgImgSet(9)">
+                            <img src="../bgIMG/10.jpg" alt="画像10" onclick="bgImgSet(10)">
+                            <img src="../bgIMG/11.jpg" alt="画像11" onclick="bgImgSet(11)">
+                        </div>
+                        <canvas id="con_pre" height="200" width="300"></canvas>
+                    </form>
+                </div>
+                <div id="con_theme" class="con_con">
+                    <p class="con_title">テーマの設定</p>
+                    <form id="con_theme_form">
+                        <input type="radio" name="con_th" value="black" id="con_te_1"><label class="radio" for="con_te_1">黒</label>
+                        <input type="radio" name="con_th" value="blue_white" id="con_te_2"><label class="radio" for="con_te_2">青白</label>
+                        <input type="radio" name="con_th" value="green_white" id="con_te_3"><label class="radio" for="con_te_3">緑白</label>
+                        <input type="radio" name="con_th" value="red_white" id="con_te_4"><label class="radio" for="con_te_4">紅白</label>
+                        <input type="radio" name="con_th" value="white_white" id="con_te_5"><label class="radio" for="con_te_5">純白</label><br>
+                    </form>
+                </div>
+                <div id="con_mySite" class="con_con">
+                    <p class="con_title">マイサイトの背景色の設定</p>
+                    <form id="con_mySite_form">
+                        <input type="radio" name="con_ms" value="rgba(255,255,255,0)_rgba(255,255,255,0)" id="con_ms_1"><label class="radio" for="con_ms_1">透明</label>
+                        <input type="radio" name="con_ms" value="white_white" id="con_ms_2"><label class="radio" for="con_ms_2">白</label>
+                        <input type="radio" name="con_ms" value="rgb(255, 200, 200)_rgb(255, 242, 219)" id="con_ms_3"><label class="radio" for="con_ms_3">夕焼け</label>
+                        <input type="radio" name="con_ms" value="rgb(124, 181, 255)_rgb(244, 118, 255)" id="con_ms_4"><label class="radio" for="con_ms_4">大洋</label>
+                        <input type="radio" name="con_ms" value="#91dfab_#b0fff1" id="con_ms_5"><label class="radio" for="con_ms_5">森</label>
+                        <input type="radio" name="con_ms" value="rgba(255,255,255,0.7)_rgba(255,255,255,0.7)" id="con_ms_6"><label class="radio" for="con_ms_6">半透明</label>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

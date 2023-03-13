@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-9KV7NYMY0W"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-9KV7NYMY0W');
+        </script>
+        <meta charset="utf-8">
+        <meta name="description" content="このページはInfordeの設定、ヘルプ、説明などのページを統合したものです">
+        <meta name="viewport" content="width=device-width">
+        <title>Inforde 統合画面(ヘルプ)</title>
+        <link rel="icon" href="../inforde-icon.png">
+        <link rel="stylesheet" href="./統合画面_files/統合画面.css">
+        <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
+        <script>
+                //サイドメニュー
+                $(function() {
+                $('.hamburger').click(function() {
+                    $(this).toggleClass('active');
+            
+                    if ($(this).hasClass('active')) {
+                        $('.globalMenuSp').addClass('active');
+                    } else {
+                        $('.globalMenuSp').removeClass('active');
+                    } 
+                
+                });
+            });
+            //メニュー内を閉じておく
+            $(function() {
+                $('.globalMenuSp a[href]').click(function() {
+                    $('.globalMenuSp').removeClass('active');
+                $('.hamburger').removeClass('active');
+
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="globalMenuSp">
+            <ul>
+                <li><a href="./統合画面_設定.html">設定</a></li>
+                <li><a href="./統合画面_プライバシーポリシー.html">プライバシーポリシー</a></li>
+                <li><a href="./統合画面_Infordeについて.html">Infordeについて</a></li>
+                <li><a href="./統合画面_ヘルプ.html">ヘルプ</a></li>
+                <li><a href="./統合画面_報告・提案.html">報告・提案</a></li>
+            </ul>
+        </nav>
+        <div id="bar">
+            <div id="ba_title">
+                <img src="../inforde-icon.png">
+                <em>Inforde</em>
+            </div>
+            <div id="ba_content">
+                <div class="bc_elem" id="bce_setting">
+                    <a href="./統合画面_設定.html">設定</a>
+                </div>
+                <div class="bc_elem" id="bce_pra">
+                    <a href="./統合画面_プライバシーポリシー.html">プライバシーポリシー</a>
+                </div>
+                <div class="bc_elem" id="bce_about">
+                    <a href="./統合画面_Infordeについて.html">Infordeについて</a>
+                </div>
+                <div class="bc_elem" id="bce_help">
+                    <a href="./統合画面_ヘルプ.html">ヘルプ</a>
+                </div>
+                <div class="bc_elem" id="bce_tell">
+                    <a href="./統合画面_報告・提案.html">報告・提案</a>
+                </div>
+            </div>
+        </div>
+        <div id="bar_bottom"></div>
+        <div id="content">
+            <div class="content_mid">
+                <h1>ヘルプ</h1>
+                <h2>レイアウトが崩れています</h2>
+                <p>アップデートしてすぐの場合、サーバーが不安定なためレイアウトが崩れることがございます。１日置けば治ります。またスマホの場合対応していない可能性がございます。ご了承ください。</p>
+                <h2>このサイトは安全ではないと出ます</h2>
+                <p>多分、日を置けば治ります。それでもだめでしたら報告してください。</p>
+                <h2>バグを見つけました！</h2>
+                <p>報告してください。</p>
+                <h2>アップデートはどのタイミングでなされますか？</h2>
+                <p>休日の最終日であることが多いです。アップデート前に告知などはありません。またアップデートしてから１日ほどはページが不安定なことがあります。</p>
+                <h2>詐欺サイトですか？</h2>
+                <p>いいえ</p>
+                <h2>なぜこのようなサイトを運営しているのですか？</h2>
+                <p>遊びです。</p>
+                <h2>彼女はいますか？</h2>
+                <p>いいえ</p>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,76 @@
+/*全体*/
+body{
+    margin: 0;
+}
+
+/*バー*/
+#bar{
+    animation: bar_show 0.5s;
+    padding-top: 10px;
+    position: fixed;
+    background-color: rgb(66, 180, 0);
+    width: 100%;
+    margin: 0;
+    border-radius: 0 0 10px 10px;
+    z-index: 100;
+}
+@keyframes bar_show{
+    0%{
+        top: -200px;
+    }
+    100%{
+        top: 0px;
+    }
+}
+#beh_bar{
+    width: 100%;
+    height: 130px;
+}
+#bar p{
+    color: white;
+    margin: 0;
+}
+#title{
+    font-size: 30px;
+    font-weight: bold;
+}
+#title_div{
+    padding-left: 50px;
+}
+#title_menu{
+    display: flex;
+    justify-content: center;
+}
+#title_menu div{
+    border-radius: 10px 10px 0 0;
+    width: 200px;
+    height: 50px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+#title_menu p{
+    font-size: 20px;
+}
+#title_menu div:hover{
+    background-color: rgb(71, 224, 0);
+}
+.game{
+    color: black;
+    font-style: normal;
+}
+@media screen and (max-width:768px){
+    #title_menu p{
+        font-size: 15px;
+    }
+    #title_div{
+        text-align: center;
+        padding: 0;
+    }
+    #title_menu div{
+        width: fit-content;
+        padding: 0 5px 0 5px;
+    }
+}
