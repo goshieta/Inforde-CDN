@@ -1,9 +1,0 @@
-#top{
-    animation: scroll-animation 1s;
-}
-@keyframes scroll-animation{
-    0%{
-        opacity: 0;
-        transform: translateY(50px);
-    }
-}
