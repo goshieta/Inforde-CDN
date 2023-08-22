@@ -1,0 +1,14 @@
+#widgets {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 1050px;
+  gap: 50px;
+  margin: 50px auto;
+  margin-top: 70px;
+}
+#widgets > div {
+  backdrop-filter: blur(2px);
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 5px;
+  padding: 20px;
+}

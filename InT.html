@@ -2,7 +2,10 @@
 <html lang="ja">
   <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9KV7NYMY0W"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-9KV7NYMY0W"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -14,23 +17,23 @@
     </script>
     <!--version 6-->
     <meta charset="utf-8" />
-    <meta name="description" content="Inforde Top はあなたのためのポータルサイトです。検索エンジンをふくめすべてを、あなたの好きなようにカスタマイズすることができます。" />
+    <meta
+      name="description"
+      content="Inforde Top はあなたのためのポータルサイトです。検索エンジンをふくめすべてを、あなたの好きなようにカスタマイズすることができます。"
+    />
     <meta name="viewport" content="width=device-width" />
     <title>Inforde Top</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="./InT/css/bottom.css" />
-    <link rel="stylesheet" href="./InT/css/load.css" />
-    <link rel="stylesheet" href="./InT/css/mes.css" />
-    <link rel="stylesheet" href="./InT/css/mySite.css" />
-    <link rel="stylesheet" href="./InT/css/wid.css" />
-    <link rel="stylesheet" href="./InT/css/phoneBack.css" />
-    <link rel="stylesheet" href="./InT/css/weatherMes.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
     <!--CSS NEW-->
     <link rel="stylesheet" href="/css/top.css" />
     <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/mySite.css" />
+    <link rel="stylesheet" href="./css/widgets.css" />
     <link rel="icon" href="./favicon.ico" />
     <link rel="apple-touch-icon" href="./image/logo.png" />
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/vanjs-org/van/public/van-1.1.0.nomodule.min.js"></script>
     <script src="./InT/js/Int.js"></script>
     <script src="./InT/js/Int_make_back.js"></script>
     <script src="./InT/js/Int_mySite_wi.js"></script>
@@ -38,7 +41,7 @@
     <script src="./InT/js/mes.js"></script>
     <script src="./InT/js/wid.js"></script>
     <!--NEW JS-->
-    <script src="./js/main.js"></script>
+    <script type="module" src="./js/main.js"></script>
   </head>
   <body>
     <div id="top">
@@ -48,21 +51,13 @@
       </div>
       <div id="form"></div>
     </div>
-    <div id="mid_mysite" class="one_bottom">
-      <div id="midm_tf">
-        <div class="ss_title">
-          <p>マイサイト</p>
-        </div>
-        <div id="midm_edi"><a href="javascript:edita()">編集</a></div>
-      </div>
-      <div id="mid_myedi"></div>
-    </div>
-    <div id="widgets" class="bo_div">
-      <div id="clock" class="ha_div">
+    <div id="mysite"></div>
+    <div id="widgets">
+      <div id="clock">
         <p id="clock_ymd">令和0年0月0日</p>
         <p id="clock_hm">00:00</p>
       </div>
-      <div id="weather" class="ha_div">
+      <div id="weather">
         <div id="we_title_floor">
           <div id="wtf_left">
             <p id="wt_title" class="ha_title">天気</p>
@@ -71,7 +66,11 @@
             <a href="javascript:change_wepo()">地点を変更</a>
           </div>
         </div>
-        <div id="we_today" onclick="url('https:\/\/weather.yahoo.co.jp/weather/jp/34/6710/34212.html')" class="hover_change">
+        <div
+          id="we_today"
+          onclick="url('https:\/\/weather.yahoo.co.jp/weather/jp/34/6710/34212.html')"
+          class="hover_change"
+        >
           <div id="wetd_le">
             <p id="wetdl_date">00日(月)</p>
             <div id="wetdl_for"></div>
@@ -91,7 +90,11 @@
             </div>
           </div>
         </div>
-        <div id="we_tomm" onclick="url('https:\/\/weather.yahoo.co.jp/weather/jp/34/6710/34212.html')" class="hover_change">
+        <div
+          id="we_tomm"
+          onclick="url('https:\/\/weather.yahoo.co.jp/weather/jp/34/6710/34212.html')"
+          class="hover_change"
+        >
           <div id="wetm_le">
             <p id="wetml_date">00日(月)</p>
             <div id="wetml_for"></div>
@@ -112,7 +115,7 @@
           </div>
         </div>
       </div>
-      <div id="osu_word" class="ha_div">
+      <div id="osu_word">
         <em class="ha_title">トレンド</em>
         <div class="load_str"></div>
         <div class="load_str"></div>
@@ -120,7 +123,7 @@
         <div class="load_str"></div>
         <div class="load_str"></div>
       </div>
-      <div id="news" class="ha_div" onclick="alert('error!')">
+      <div id="news" onclick="alert('error!')">
         <p class="ha_title">ニュース(NHK提供)</p>
         <div id="ne_field" class="hover_change">
           <div class="load_str"></div>

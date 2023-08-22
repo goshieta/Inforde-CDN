@@ -16,3 +16,36 @@
   font-weight: 700;
   margin: 0;
 }
+
+#form {
+  margin: 10px auto;
+  width: fit-content;
+}
+#searchBox {
+  width: 600px;
+  backdrop-filter: blur(5px);
+  background: rgba(255, 255, 255, 0.7);
+  height: 60px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 20px;
+}
+#searchBox img {
+  width: 25px;
+  height: 25px;
+}
+#searchBox input {
+  display: block;
+  height: 100%;
+  background: none;
+  border: none;
+  flex-grow: 1;
+  outline: none;
+  padding: 0 10px;
+  font-size: 15px;
+}
+#searchBox input::-webkit-search-cancel-button {
+  display: none;
+}
