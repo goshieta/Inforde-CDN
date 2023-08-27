@@ -1,6 +1,7 @@
 import van from "https://cdn.jsdelivr.net/gh/vanjs-org/van/public/van-1.1.0.min.js";
 import searchBox from "./searchBox.js";
 import MySite from "./mySite.js";
+import { Clock, Weather, Trend, News } from "./someWidgets.js";
 
 function main() {
   //テーマなどの設定の取り出し、反映
@@ -50,6 +51,13 @@ function main() {
         href: "https://www.google.com/maps",
       },
     ])
+  );
+  van.add(
+    document.getElementById("widgets"),
+    Clock(van),
+    Weather(van),
+    Trend(van),
+    News(van)
   );
 }
 
