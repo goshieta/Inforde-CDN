@@ -17,7 +17,7 @@ export const Weather = {
           </div>
           <div class="weatherStringTD">
             <p>降水確率</p>
-            <p>{{oneDay.forecast}}</p>
+            <p>{{oneDay.chanceOfRain}}</p>
         </div>
         </div>
       </div>
@@ -31,9 +31,38 @@ export const Weather = {
         day: "",
         weather: "",
         temp: "",
-        forecast: "",
+        chanceOfRain: "",
       },
     });
+
+    fetch(`https://weather.tsukumijima.net/api/forecast/city/${props.point}`)
+      .then((e) => e.json())
+      .then((json) => {
+        pointInfo.point = json.location.city;
+        const forecastsArray = json.forecasts;
+        forecastsArray.length = 2;
+        console.log(forecastsArray);
+
+        pointInfo.weatherArray = forecastsArray.map((oneForecast) => {
+          //天気の要約の作成
+          let weather_img_arr = ["晴", "曇", "雨", "雪"];
+          let img_str = "";
+          weather_img_arr.map((value) => {
+            if (oneForecast.telop.indexOf(value) !== -1) {
+              img_str += value;
+            }
+          });
+          img_str = img_str.substring(0, 2);
+          return {
+            day: `${oneForecast.date.split("-")[1]} . ${
+              oneForecast.date.split("-")[2]
+            }`,
+            weather: img_str,
+            temp: "",
+          };
+        });
+      });
+
     return {
       pointInfo,
     };
