@@ -1,15 +1,14 @@
-import van from "https://cdn.jsdelivr.net/gh/vanjs-org/van/public/van-1.1.0.min.js";
+import * as Vue from "https://cdn.jsdelivr.net/npm/vue@3.2/dist/vue.esm-browser.js";
 import searchBox from "./searchBox.js";
 import MySite from "./mySite.js";
-import { Clock, Weather, Trend, News } from "./someWidgets.js";
+import widget from "./widget.js";
 
 function main() {
   //テーマなどの設定の取り出し、反映
   //コンテンツの追加
-  van.add(document.getElementById("form"), searchBox(van));
-  van.add(
-    document.getElementById("mysite"),
-    ...MySite(van, [
+  Vue.createApp(searchBox(Vue)).mount("#form");
+  Vue.createApp(
+    MySite(Vue, [
       {
         img: "https://www.youtube.com/s/desktop/f6119d90/img/favicon_32x32.png",
         href: "https://www.youtube.com/",
@@ -51,14 +50,8 @@ function main() {
         href: "https://www.google.com/maps",
       },
     ])
-  );
-  van.add(
-    document.getElementById("widgets"),
-    Clock(van),
-    Weather(van),
-    Trend(van),
-    News(van)
-  );
+  ).mount("#mysite");
+  Vue.createApp(widget(Vue)).mount("#widgets");
 }
 
 window.addEventListener("DOMContentLoaded", main);

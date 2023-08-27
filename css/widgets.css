@@ -12,3 +12,19 @@
   border-radius: 5px;
   padding: 20px;
 }
+
+/*時計*/
+#clock {
+  text-align: center;
+  padding: 70px 0 !important;
+}
+#clock p:first-child {
+  font-size: 20px;
+  font-weight: 400;
+  margin: 0px;
+}
+#clock p:last-child {
+  font-size: 50px;
+  font-weight: 700;
+  margin-top: 20px;
+}

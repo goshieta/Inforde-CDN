@@ -40,10 +40,27 @@
         <img src="./image/favicon.png" alt="" width="40" height="40" />
         <h1>Inforde Top</h1>
       </div>
-      <div id="form"></div>
+      <div id="form">
+        <div id="searchBox">
+          <img src="./image/searchEngine/google.ico" alt="" />
+          <input type="search" />
+          <img src="./image/icon/search.svg" alt="" />
+        </div>
+      </div>
     </div>
-    <div id="mysite"></div>
-    <div id="widgets"></div>
+    <div id="mysite">
+      <div v-for="onSite of mySiteArray" class="oneMySite">
+        <a :href="onSite.href" target="_blank" rel="noopener noreferrer">
+          <img :src="onSite.img" alt="" />
+        </a>
+      </div>
+    </div>
+    <div id="widgets">
+      <clock></clock>
+      <weather></weather>
+      <trend></trend>
+      <news></news>
+    </div>
     <!--
     <div id="footer">
         <div id="footer_left">
