@@ -74,3 +74,33 @@
   color: #ff008a;
   margin-right: 20px;
 }
+
+/*トレンドとニュース*/
+.widgetsTitle {
+  font-weight: bold;
+  text-align: center;
+}
+.widgetsTitle::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #00e392;
+  margin: 0 auto;
+  margin-top: 5px;
+}
+.widgetsBody {
+  width: fit-content;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+.widgetsBody a {
+  color: black;
+  text-decoration: none;
+  display: block;
+  margin: 20px 0;
+}
+.widgetsBody a:hover {
+  text-decoration: underline;
+}

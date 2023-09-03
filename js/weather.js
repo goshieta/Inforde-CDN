@@ -29,12 +29,6 @@ export const Weather = {
     const pointInfo = Vue.reactive({
       point: "読み込み中",
       weatherArray: [],
-      today: {
-        day: "",
-        weather: "",
-        temp: "",
-        chanceOfRain: "",
-      },
     });
 
     fetch(`https://weather.tsukumijima.net/api/forecast/city/${props.point}`)
