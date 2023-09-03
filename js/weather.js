@@ -1,26 +1,28 @@
 import * as Vue from "https://cdn.jsdelivr.net/npm/vue@3.2/dist/vue.esm-browser.js";
+import { zeroPadding } from "./clock.js";
 
 export const Weather = {
   template: `<div>
     <div id="weatherHead">
+      <img src="../image/icon/location.svg" alt="">
       <p>{{pointInfo.point}}</p>
     </div>
-      <div v-for="oneDay in pointInfo.weatherArray">
-        <div class="weatherImgArea">
-          <img src="">
-        </div>
-        <div class="weatherStringArea">
-          <p>{{oneDay.day}}</p>
-          <div class="weatherStringTD">
-            <p>気温</p>
-            <p>{{oneDay.temp}}</p>
-          </div>
-          <div class="weatherStringTD">
-            <p>降水確率</p>
-            <p>{{oneDay.chanceOfRain}}</p>
-        </div>
-        </div>
+    <div v-for="oneDay in pointInfo.weatherArray" class="weatherInfo">
+      <div class="weatherImgArea">
+        <img :src="'../image/weather/'+oneDay.weather+'.png'">
       </div>
+      <div class="weatherStringArea">
+        <p>{{oneDay.day}}</p>
+        <div class="weatherStringTD">
+          <p>気温</p>
+          <p>{{oneDay.temp}}</p>
+        </div>
+        <div class="weatherStringTD">
+          <p>降水確率</p>
+          <p>{{oneDay.chanceOfRain}}</p>
+      </div>
+      </div>
+    </div>
   </div>`,
   props: ["point"],
   setup(props) {
@@ -58,7 +60,17 @@ export const Weather = {
               oneForecast.date.split("-")[2]
             }`,
             weather: img_str,
-            temp: "",
+            temp: oneForecast.temperature.max.celsius + "℃",
+            chanceOfRain:
+              oneForecast.chanceOfRain[
+                `T${zeroPadding(
+                  new Date().getHours() - (new Date().getHours() % 6),
+                  2
+                )}_${zeroPadding(
+                  new Date().getHours() - (new Date().getHours() % 6) + 6,
+                  2
+                )}`
+              ],
           };
         });
       });

@@ -1,5 +1,8 @@
 import * as Vue from "https://cdn.jsdelivr.net/npm/vue@3.2/dist/vue.esm-browser.js";
 
+export const zeroPadding = (num, degit) =>
+  ("0".repeat(degit) + num).slice(-degit);
+
 export const Clock = {
   template: `<div id="clock">
       <p>{{dayPrev}}</p>
@@ -7,8 +10,6 @@ export const Clock = {
     </div>`,
   setup() {
     const time = Vue.reactive({ date: new Date() });
-
-    const zeroPadding = (num, degit) => ("0".repeat(degit) + num).slice(-degit);
 
     const dayPrev = Vue.computed(() => {
       const dayArray = ["日", "月", "火", "水", "木", "金", "土"];

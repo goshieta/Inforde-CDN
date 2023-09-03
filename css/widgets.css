@@ -28,3 +28,49 @@
   font-weight: 700;
   margin-top: 20px;
 }
+
+/*天気*/
+#weatherHead {
+  display: flex;
+  margin-left: auto;
+  margin-right: 0;
+  width: fit-content;
+  align-items: center;
+  margin-bottom: 20px;
+}
+#weatherHead img {
+  width: 20px;
+  height: 20px;
+}
+#weatherHead p {
+  font-size: 15px;
+  padding-left: 10px;
+  margin: 0;
+}
+
+.weatherInfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.weatherImgArea img {
+  width: 70px;
+  height: 70px;
+}
+.weatherStringArea {
+  margin-left: 60px;
+}
+.weatherStringTD {
+  display: flex;
+  font-size: 15px;
+  align-items: center;
+  margin: 10px 0;
+}
+.weatherStringTD p {
+  margin: 0;
+}
+.weatherStringTD p:first-child {
+  color: #ff008a;
+  margin-right: 20px;
+}
